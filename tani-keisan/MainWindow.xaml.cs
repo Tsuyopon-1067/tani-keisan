@@ -46,11 +46,11 @@ namespace tani_keisan
                     this.Left = 0;
                     break;
                 case "右下":
-                    this.Top = ScreenHeight;
+                    this.Top = ScreenHeight - this.Height;
                     this.Left = ScreenWidth - this.Width;
                     break;
                 case "左下":
-                    this.Top = ScreenHeight;
+                    this.Top = ScreenHeight - this.Height;
                     this.Left = 0;
                     break;
             }

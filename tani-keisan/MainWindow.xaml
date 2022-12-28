@@ -7,35 +7,25 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="400" WindowStyle="None" ResizeMode="NoResize">
     <Grid>
+        <!--<ToggleButton Content="位置" HorizontalAlignment="Left" Margin="209,430,0,0" Height="20" VerticalAlignment="Top" Click="Button_Click_1">
+            <ToggleButton.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="右上"></MenuItem>
+                    <MenuItem Header="左上"></MenuItem>
+                    <MenuItem Header="右下"></MenuItem>
+                    <MenuItem Header="左下"></MenuItem>
+                </ContextMenu>
+            </ToggleButton.ContextMenu>
+        </ToggleButton>-->
         <Button Content="位置" HorizontalAlignment="Left" Margin="209,430,0,0" Height="20" VerticalAlignment="Top" Click="Button_Click_1">
-            <!-- solution:https://www.web-dev-qa-db-ja.com/ja/wpf/%E5%B7%A6%E3%82%AF%E3%83%AA%E3%83%83%E3%82%AF%E3%81%A7%E3%81%AEwpf%E3%82%B3%E3%83%B3%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88%E3%83%A1%E3%83%8B%E3%83%A5%E3%83%BC/970529297/-->
-            <Button.Style>
-                <Style TargetType="{x:Type Button}">
-                    <Style.Triggers>
-                        <EventTrigger RoutedEvent="Click">
-                            <EventTrigger.Actions>
-                                <BeginStoryboard>
-                                    <Storyboard>
-                                        <BooleanAnimationUsingKeyFrames Storyboard.TargetProperty="ContextMenu.IsOpen">
-                                            <DiscreteBooleanKeyFrame KeyTime="0:0:0" Value="True"/>
-                                        </BooleanAnimationUsingKeyFrames>
-                                    </Storyboard>
-                                </BeginStoryboard>
-                            </EventTrigger.Actions>
-                        </EventTrigger>
-                    </Style.Triggers>
-                    <Setter Property="ContextMenu">
-                        <Setter.Value>
-                            <ContextMenu>
-                                <MenuItem Header="右上"></MenuItem>
-                                <MenuItem Header="左上"></MenuItem>
-                                <MenuItem Header="右下"></MenuItem>
-                                <MenuItem Header="左下"></MenuItem>
-                            </ContextMenu>
-                        </Setter.Value>
-                    </Setter>
-                </Style>
-            </Button.Style>
+            <Button.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="右上" Click="Change_Pos"></MenuItem>
+                    <MenuItem Header="左上" Click="Change_Pos"></MenuItem>
+                    <MenuItem Header="右下" Click="Change_Pos"></MenuItem>
+                    <MenuItem Header="左下" Click="Change_Pos"></MenuItem>
+                </ContextMenu>
+            </Button.ContextMenu>
         </Button>
         <Button Content="天気予報設定" HorizontalAlignment="Left" Margin="237,430,0,0" Height="20" VerticalAlignment="Top" Click="Button_Click_2"/>
         <Button Content="単位登録" HorizontalAlignment="Left" Margin="313,430,0,0" Width="55" Height="20" VerticalAlignment="Top" Click="Button_Click_3"/>
