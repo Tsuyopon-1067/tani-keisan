@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace tani_keisan
 {
@@ -20,9 +21,50 @@ namespace tani_keisan
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        /// <summary>
+        /// 時刻表示用タイマー
+        /// </summary>
+        private DispatcherTimer timer;
+
         public MainWindow()
         {
             InitializeComponent();
+
+            timer = CreateTimer();
+
+            timer.Start();
+
+            setDate();
+        }
+        // solution : https://qiita.com/Kosen-amai/items/88b3d987b41f46ebea4b
+        /// <summary>
+        /// タイマー生成処理
+        /// </summary>
+        /// <returns>生成したタイマー</returns>
+        private DispatcherTimer CreateTimer()
+        {
+            var t = new DispatcherTimer(DispatcherPriority.SystemIdle);
+
+            // タイマーイベントの発生間隔を300ミリ秒に設定
+            t.Interval = TimeSpan.FromMilliseconds(200);
+
+            // タイマーイベントの定義
+            t.Tick += (sender, e) => {
+                // タイマーイベント発生時の処理をここに書く
+
+                // 現在の時分秒をテキストに設定
+                textBox.Text = DateTime.Now.ToString("HH:mm:ss");
+            };
+
+            // 生成したタイマーを返す
+            return t;
+        }
+
+        private void setDate()
+        {
+            var now = System.DateTime.Now;
+            date.Text = now.ToString("yyyy/MM/dd");
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
@@ -66,7 +108,13 @@ namespace tani_keisan
         }
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
+            timer.Stop();
             this.Close();
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }

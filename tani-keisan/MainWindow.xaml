@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:tani_keisan"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="400" WindowStyle="None" ResizeMode="NoResize">
+        Title="MainWindow" Height="450" Width="400" WindowStyle="None" ResizeMode="NoResize" ShowInTaskbar="False">
     <Grid>
         <!--<ToggleButton Content="位置" HorizontalAlignment="Left" Margin="209,430,0,0" Height="20" VerticalAlignment="Top" Click="Button_Click_1">
             <ToggleButton.ContextMenu>
@@ -30,6 +30,19 @@
         <Button Content="天気予報設定" HorizontalAlignment="Left" Margin="237,430,0,0" Height="20" VerticalAlignment="Top" Click="Button_Click_2"/>
         <Button Content="単位登録" HorizontalAlignment="Left" Margin="313,430,0,0" Width="55" Height="20" VerticalAlignment="Top" Click="Button_Click_3"/>
         <Button Content="終了" HorizontalAlignment="Right" Height="20" Margin="0,430,0,0" VerticalAlignment="Top" Width="32" Click="Button_Click_4"/>
+        <Border BorderBrush="Black" BorderThickness="1">
+            <Border BorderBrush="Black" BorderThickness="1" Margin="20,20,20,348">
+                <TextBox x:Name = "textBox" Text="00:00:00" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="48" TextChanged="TextBox_TextChanged" FontFamily="Arial" Margin="-1,0,0,0"/>
+            </Border>
+        </Border>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="45" Margin="21,101,0,0" VerticalAlignment="Top" Width="179">
+            <TextBox TextWrapping="Wrap" Text="TextBox" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="20"/>
+        </Border>
+        <Border BorderBrush="Black" BorderThickness="1"/>
+        <Border BorderBrush="Black" BorderThickness="1"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="45" Margin="200,101,0,0" VerticalAlignment="Top" Width="179">
+            <TextBox x:Name="date" Text="0000/00/00" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="20"/>
+        </Border>
     </Grid>
 
 </Window>
