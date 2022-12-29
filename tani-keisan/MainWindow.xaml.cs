@@ -54,7 +54,7 @@ namespace tani_keisan
                 // タイマーイベント発生時の処理をここに書く
 
                 // 現在の時分秒をテキストに設定
-                textBox.Text = DateTime.Now.ToString("HH:mm:ss");
+                textBlock.Text = DateTime.Now.ToString("HH:mm:ss");
             };
 
             // 生成したタイマーを返す

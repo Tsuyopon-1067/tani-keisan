@@ -32,16 +32,57 @@
         <Button Content="終了" HorizontalAlignment="Right" Height="20" Margin="0,430,0,0" VerticalAlignment="Top" Width="32" Click="Button_Click_4"/>
         <Border BorderBrush="Black" BorderThickness="1">
             <Border BorderBrush="Black" BorderThickness="1" Margin="20,20,20,348">
-                <TextBox x:Name = "textBox" Text="00:00:00" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="48" TextChanged="TextBox_TextChanged" FontFamily="Arial" Margin="-1,0,0,0"/>
+                <TextBlock x:Name = "textBlock" Text="00:00:00"  FontFamily="Arial" Margin="-1,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="48" />
             </Border>
         </Border>
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="45" Margin="21,101,0,0" VerticalAlignment="Top" Width="179">
-            <TextBox TextWrapping="Wrap" Text="TextBox" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="20"/>
+            <TextBlock Text="tenki" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="20" />
+        </Border>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="45" Margin="200,101,0,0" VerticalAlignment="Top" Width="179">
+            <TextBlock x:Name="date" Text="0000/00/00" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="20" />
         </Border>
         <Border BorderBrush="Black" BorderThickness="1"/>
-        <Border BorderBrush="Black" BorderThickness="1"/>
-        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="45" Margin="200,101,0,0" VerticalAlignment="Top" Width="179">
-            <TextBox x:Name="date" Text="0000/00/00" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="20"/>
+        <Border BorderBrush="Black" BorderThickness="1">
+            <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Center" Height="220" Margin="0,161,0,0" VerticalAlignment="Top" Width="358">
+                <Grid Margin="0,0,0,9">
+                    <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="30" Margin="-1,-1,0,0" VerticalAlignment="Top" Width="179">
+                        <TextBlock Text="教養" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
+                    </Border>
+                    <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="30" Margin="178,-1,0,0" VerticalAlignment="Top" Width="178">
+                        <TextBlock Text="専門" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
+                    </Border>
+                    <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="30" Margin="0,29,0,0" VerticalAlignment="Top" Width="178">
+                        <TextBlock TextWrapping="Wrap" Text="教養A 0/2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
+                    </Border>
+                    <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="30" Margin="178,29,0,0" VerticalAlignment="Top" Width="178">
+                        <TextBlock TextWrapping="Wrap" Text="必修 0/64" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
+                    </Border>
+                    <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="30" Margin="0,59,0,0" VerticalAlignment="Top" Width="178">
+                        <TextBlock TextWrapping="Wrap" Text="教養B 0/2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
+                    </Border>
+                    <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="30" Margin="178,59,0,0" VerticalAlignment="Top" Width="178">
+                        <TextBlock TextWrapping="Wrap" Text="選必 0/16" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
+                    </Border>
+                    <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="30" Margin="0,89,0,0" VerticalAlignment="Top" Width="178">
+                        <TextBlock TextWrapping="Wrap" Text="学際A 0/2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
+                    </Border>
+                    <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="30" Margin="178,89,0,0" VerticalAlignment="Top" Width="178">
+                        <TextBlock TextWrapping="Wrap" Text="選択 0/6" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
+                    </Border>
+                    <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="30" Margin="0,119,0,0" VerticalAlignment="Top" Width="178">
+                        <TextBlock TextWrapping="Wrap" Text="合計 0/28" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
+                    </Border>
+                    <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="30" Margin="178,119,0,0" VerticalAlignment="Top" Width="178">
+                        <TextBlock TextWrapping="Wrap" Text="合計 0/86" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
+                    </Border>
+                    <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Center" Height="30" Margin="0,149,0,0" VerticalAlignment="Top" Width="356">
+                        <TextBlock TextWrapping="Wrap" Text="自由科目 0/10" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
+                    </Border>
+                    <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Center" Height="30" Margin="0,179,0,0" VerticalAlignment="Top" Width="356">
+                        <TextBlock TextWrapping="Wrap" Text="合計 0/124" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
+                    </Border>
+                </Grid>
+            </Border>
         </Border>
     </Grid>
 
