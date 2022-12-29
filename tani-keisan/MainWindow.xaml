@@ -7,83 +7,95 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="400" WindowStyle="None" ResizeMode="NoResize" ShowInTaskbar="False">
     <Grid>
-        <!--<ToggleButton Content="位置" HorizontalAlignment="Left" Margin="209,430,0,0" Height="20" VerticalAlignment="Top" Click="Button_Click_1">
-            <ToggleButton.ContextMenu>
-                <ContextMenu>
-                    <MenuItem Header="右上"></MenuItem>
-                    <MenuItem Header="左上"></MenuItem>
-                    <MenuItem Header="右下"></MenuItem>
-                    <MenuItem Header="左下"></MenuItem>
-                </ContextMenu>
-            </ToggleButton.ContextMenu>
-        </ToggleButton>-->
-        <Button Content="位置" HorizontalAlignment="Left" Margin="209,430,0,0" Height="20" VerticalAlignment="Top" Click="Button_Click_1">
-            <Button.ContextMenu>
-                <ContextMenu>
-                    <MenuItem Header="右上" Click="Change_Pos"></MenuItem>
-                    <MenuItem Header="左上" Click="Change_Pos"></MenuItem>
-                    <MenuItem Header="右下" Click="Change_Pos"></MenuItem>
-                    <MenuItem Header="左下" Click="Change_Pos"></MenuItem>
-                </ContextMenu>
-            </Button.ContextMenu>
-        </Button>
-        <Button Content="天気予報設定" HorizontalAlignment="Left" Margin="237,430,0,0" Height="20" VerticalAlignment="Top" Click="Button_Click_2"/>
-        <Button Content="単位登録" HorizontalAlignment="Left" Margin="313,430,0,0" Width="55" Height="20" VerticalAlignment="Top" Click="Button_Click_3"/>
-        <Button Content="終了" HorizontalAlignment="Right" Height="20" Margin="0,430,0,0" VerticalAlignment="Top" Width="32" Click="Button_Click_4"/>
-        <Border BorderBrush="Black" BorderThickness="1">
-            <Border BorderBrush="Black" BorderThickness="1" Margin="20,20,20,348">
-                <TextBlock x:Name = "textBlock" Text="00:00:00"  FontFamily="Arial" Margin="-1,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="48" />
-            </Border>
-        </Border>
-        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="45" Margin="21,101,0,0" VerticalAlignment="Top" Width="179">
-            <TextBlock Text="tenki" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="20" />
-        </Border>
-        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="45" Margin="200,101,0,0" VerticalAlignment="Top" Width="179">
-            <TextBlock x:Name="date" Text="0000/00/00" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="20" />
-        </Border>
-        <Border BorderBrush="Black" BorderThickness="1"/>
-        <Border BorderBrush="Black" BorderThickness="1">
-            <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Center" Height="220" Margin="0,161,0,0" VerticalAlignment="Top" Width="358">
-                <Grid Margin="0,0,0,9">
-                    <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="30" Margin="-1,-1,0,0" VerticalAlignment="Top" Width="179">
-                        <TextBlock Text="教養" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
-                    </Border>
-                    <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="30" Margin="178,-1,0,0" VerticalAlignment="Top" Width="178">
-                        <TextBlock Text="専門" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
-                    </Border>
-                    <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="30" Margin="0,29,0,0" VerticalAlignment="Top" Width="178">
-                        <TextBlock TextWrapping="Wrap" Text="教養A 0/2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
-                    </Border>
-                    <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="30" Margin="178,29,0,0" VerticalAlignment="Top" Width="178">
-                        <TextBlock TextWrapping="Wrap" Text="必修 0/64" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
-                    </Border>
-                    <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="30" Margin="0,59,0,0" VerticalAlignment="Top" Width="178">
-                        <TextBlock TextWrapping="Wrap" Text="教養B 0/2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
-                    </Border>
-                    <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="30" Margin="178,59,0,0" VerticalAlignment="Top" Width="178">
-                        <TextBlock TextWrapping="Wrap" Text="選必 0/16" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
-                    </Border>
-                    <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="30" Margin="0,89,0,0" VerticalAlignment="Top" Width="178">
-                        <TextBlock TextWrapping="Wrap" Text="学際A 0/2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
-                    </Border>
-                    <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="30" Margin="178,89,0,0" VerticalAlignment="Top" Width="178">
-                        <TextBlock TextWrapping="Wrap" Text="選択 0/6" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
-                    </Border>
-                    <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="30" Margin="0,119,0,0" VerticalAlignment="Top" Width="178">
-                        <TextBlock TextWrapping="Wrap" Text="合計 0/28" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
-                    </Border>
-                    <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="30" Margin="178,119,0,0" VerticalAlignment="Top" Width="178">
-                        <TextBlock TextWrapping="Wrap" Text="合計 0/86" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
-                    </Border>
-                    <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Center" Height="30" Margin="0,149,0,0" VerticalAlignment="Top" Width="356">
-                        <TextBlock TextWrapping="Wrap" Text="自由科目 0/10" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
-                    </Border>
-                    <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Center" Height="30" Margin="0,179,0,0" VerticalAlignment="Top" Width="356">
-                        <TextBlock TextWrapping="Wrap" Text="合計 0/124" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
-                    </Border>
-                </Grid>
-            </Border>
-        </Border>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="24px"/>
+        </Grid.RowDefinitions>
+        <!-- 時計ここから -->
+        <Grid Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock 
+                x:Name = "clock" 
+                Text="00:00:00"  
+                FontFamily="Arial"
+                Margin="6" 
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center" 
+                FontSize="48" 
+                Grid.Row="0"
+                Grid.Column="0"
+                Grid.ColumnSpan="2" />
+            <TextBlock 
+                Text="00:00:00"  
+                FontFamily="Arial"
+                Margin="6" 
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center" 
+                FontSize="20" 
+                Grid.Row="1"
+                Grid.Column="0" />
+            <TextBlock 
+                x:Name = "date" 
+                Text="0000/00/00"  
+                FontFamily="Arial"
+                Margin="6" 
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center" 
+                FontSize="20" 
+                Grid.Row="1"
+                Grid.Column="1" />
+        </Grid>
+        <!-- 時計ここまで -->
+        
+        <!-- 単位計算ここから -->
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <!-- 左右に分割されてる5行 -->
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="教養" />
+            <TextBlock x:Name="kyouyouA" Grid.Row="1" Grid.Column="0" Text="教養A 0/2" />
+            <TextBlock x:Name="kyouyouB" Grid.Row="2" Grid.Column="0" Text="教養A 0/2" />
+            <TextBlock x:Name="gakusaiA" Grid.Row="3" Grid.Column="0" Text="教養A 0/2" />
+            <TextBlock x:Name="kyouyouSum" Grid.Row="4" Grid.Column="0" Text="教養A 0/2" />
+            <TextBlock Grid.Row="0" Grid.Column="1" Text="専門" />
+            <TextBlock x:Name="specialA" Grid.Row="1" Grid.Column="1" Text="必修0/64" />
+            <TextBlock x:Name="specialB" Grid.Row="2" Grid.Column="1" Text="選必0/16" />
+            <TextBlock x:Name="specialC" Grid.Row="3" Grid.Column="1" Text="選択0/6" />
+            <TextBlock x:Name="specialSum" Grid.Row="4" Grid.Column="1" Text="合計0/86" />
+            <!-- 下の2行 -->
+            <TextBlock x:Name="creditFree" Grid.Row="5" Grid.ColumnSpan="2" Text="自由科目 0/10" />
+            <TextBlock x:Name="creditSum" Grid.Row="6" Grid.ColumnSpan="2" Text="合計0/124" />
+        </Grid>
+        <!-- 単位計算ここまで -->
+
+        <!-- 下部メニューバーここから -->
+        <Grid Grid.Row="3" Grid.ColumnSpan="2">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <TextBlock Text="aaa" />
+                <TextBlock Text="aaa" />
+                <TextBlock Text="aaa" />
+                <TextBlock Text="aaa" />
+            </StackPanel>
+        </Grid>
     </Grid>
 
 </Window>
