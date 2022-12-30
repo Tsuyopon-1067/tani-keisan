@@ -8,7 +8,7 @@
         Title="MainWindow" 
         Height="350" Width="400" 
         WindowStyle="None" ResizeMode="CanResize" ShowInTaskbar="False"
-        Background="Black">
+        AllowsTransparency="True" Background="Black">
     <Grid>
         <!-- 高さの比 時計，単位表，下部バーの順 -->
         <Grid.RowDefinitions>
