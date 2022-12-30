@@ -5,29 +5,32 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:tani_keisan" xmlns:behaviors="clr-namespace:Microsoft.VisualBasic;assembly=Microsoft.VisualBasic.Core"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="400" WindowStyle="None" ResizeMode="CanResize" ShowInTaskbar="False">
+        Title="MainWindow" 
+        Height="350" Width="400" 
+        WindowStyle="None" ResizeMode="CanResize" ShowInTaskbar="False"
+        Background="Black">
     <Grid>
+        <!-- 高さの比 時計，単位表，下部バーの順 -->
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
             <RowDefinition Height="2*"/>
+            <RowDefinition Height="3*"/>
             <RowDefinition Height="24px"/>
         </Grid.RowDefinitions>
         <!-- 時計ここから -->
-        <Grid Grid.Row="0">
+        <Grid Grid.Row="0" Background="White" Margin="14 14 14 7">
             <Grid.RowDefinitions>
-                <RowDefinition Height="2*"/>
+                <RowDefinition Height="2.5*"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Viewbox Grid.ColumnSpan="2" Margin="0,0,0,47" Grid.RowSpan="2">
+            <Viewbox Grid.ColumnSpan="2" Margin="0">
                 <TextBlock 
                 x:Name = "clock" 
                 Text="00:00:00"  
                 FontFamily="Arial"
-                Margin="6" 
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center" 
                 FontSize="48" 
@@ -37,9 +40,8 @@
             </Viewbox>
             <Viewbox Grid.Row="1">
                 <TextBlock 
-                    Text="00:00:00"  
+                    Text="天気"  
                     FontFamily="Arial"
-                    Margin="6" 
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center" 
                     FontSize="20" 
@@ -51,7 +53,6 @@
                 x:Name = "date" 
                 Text="0000/00/00"  
                 FontFamily="Arial"
-                Margin="6" 
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center" 
                 FontSize="20" 
@@ -62,7 +63,7 @@
         <!-- 時計ここまで -->
 
         <!-- 単位計算ここから -->
-        <Grid Grid.Row="1">
+        <Grid Grid.Row="1" Background="White" Margin="14 7 14 14">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
@@ -77,43 +78,51 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <!-- 左右に分割されてる5行 -->
-            <Viewbox Grid.Column="0" Grid.Row="0">
+            <Viewbox Grid.Column="0" Grid.Row="0" Margin="2">
                 <TextBlock Grid.Row="0" Grid.Column="0" Text="教養" FontSize="20" />
             </Viewbox>
-            <Viewbox Grid.Column="0" Grid.Row="1">
+            <Viewbox Grid.Column="0" Grid.Row="1" Margin="2">
                 <TextBlock x:Name="kyouyouA" Grid.Row="1" Grid.Column="0" Text="教養A 0/2" FontSize="20" />
             </Viewbox>
-            <Viewbox Grid.Column="0" Grid.Row="2">
-                <TextBlock x:Name="kyouyouB" Grid.Row="2" Grid.Column="0" Text="教養A 0/2" FontSize="20" />
+            <Viewbox Grid.Column="0" Grid.Row="2" Margin="2">
+                <TextBlock x:Name="kyouyouB" Grid.Row="2" Grid.Column="0" Text="教養B 0/2" FontSize="20" />
             </Viewbox>
-            <Viewbox Grid.Column="0" Grid.Row="3">
-                <TextBlock x:Name="gakusaiA" Grid.Row="3" Grid.Column="0" Text="教養A 0/2" FontSize="20" />
+            <Viewbox Grid.Column="0" Grid.Row="3" Margin="2">
+                <TextBlock x:Name="gakusaiA" Grid.Row="3" Grid.Column="0" Text="学際A 0/2" FontSize="20" />
             </Viewbox>
-            <Viewbox Grid.Column="0" Grid.Row="4">
-                <TextBlock x:Name="kyouyouSum" Grid.Row="4" Grid.Column="0" Text="教養A 0/2" FontSize="20" />
+            <Viewbox Grid.Column="0" Grid.Row="4" Margin="2">
+                <TextBlock x:Name="kyouyouSum" Grid.Row="4" Grid.Column="0" Text="教養合計 0/2" FontSize="20" />
             </Viewbox>
-            <Viewbox Grid.Column="1" Grid.Row="0">
+            <Viewbox Grid.Column="1" Grid.Row="0" Margin="2">
                 <TextBlock Grid.Row="0" Grid.Column="1" Text="専門" FontSize="20" />
             </Viewbox>
-            <Viewbox Grid.Column="1" Grid.Row="1">
+            <Viewbox Grid.Column="1" Grid.Row="1" Margin="2">
                 <TextBlock x:Name="specialA" Grid.Row="1" Grid.Column="1" Text="必修0/64" FontSize="20" />
             </Viewbox>
-            <Viewbox Grid.Column="1" Grid.Row="2">
+            <Viewbox Grid.Column="1" Grid.Row="2" Margin="2">
                 <TextBlock x:Name="specialB" Grid.Row="2" Grid.Column="1" Text="選必0/16" FontSize="20" />
             </Viewbox>
-            <Viewbox Grid.Column="1" Grid.Row="3">
+            <Viewbox Grid.Column="1" Grid.Row="3" Margin="2">
                 <TextBlock x:Name="specialC" Grid.Row="3" Grid.Column="1" Text="選択0/6" FontSize="20" />
             </Viewbox>
-            <Viewbox Grid.Column="1" Grid.Row="4">
-                <TextBlock x:Name="specialSum" Grid.Row="4" Grid.Column="1" Text="合計0/86" FontSize="20" />
+            <Viewbox Grid.Column="1" Grid.Row="4" Margin="2">
+                <TextBlock x:Name="specialSum" Grid.Row="4" Grid.Column="1" Text="専門合計0/86" FontSize="20" />
             </Viewbox>
             <!-- 下の2行 -->
-            <Viewbox Grid.Row="5" Grid.ColumnSpan="2">
+            <Viewbox Grid.Row="5" Grid.ColumnSpan="2" Margin="2">
                 <TextBlock x:Name="creditFree" Grid.Row="5" Grid.ColumnSpan="2" Text="自由科目 0/10" FontSize="20" />
             </Viewbox>
-            <Viewbox Grid.Row="6" Grid.ColumnSpan="2">
+            <Viewbox Grid.Row="6" Grid.ColumnSpan="2" Margin="2">
                 <TextBlock x:Name="creditSum" Grid.Row="6" Grid.ColumnSpan="2" Text="合計0/124" FontSize="20" />
             </Viewbox>
+            <!-- 罫線 横線6本，縦線1本の順番 -->
+            <Border BorderBrush="Black" Grid.Row="0" Grid.ColumnSpan="2" BorderThickness="0 0 0 2" />
+            <Border BorderBrush="Black" Grid.Row="1" Grid.ColumnSpan="2" BorderThickness="0 0 0 2" />
+            <Border BorderBrush="Black" Grid.Row="2" Grid.ColumnSpan="2" BorderThickness="0 0 0 2" />
+            <Border BorderBrush="Black" Grid.Row="3" Grid.ColumnSpan="2" BorderThickness="0 0 0 2" />
+            <Border BorderBrush="Black" Grid.Row="4" Grid.ColumnSpan="2" BorderThickness="0 0 0 2" />
+            <Border BorderBrush="Black" Grid.Row="5" Grid.ColumnSpan="2" BorderThickness="0 0 0 2" />
+            <Border BorderBrush="Black" Grid.Row="0" Grid.RowSpan="5" BorderThickness="0 0 2 0" />
         </Grid>
         <!-- 単位計算ここまで -->
 
