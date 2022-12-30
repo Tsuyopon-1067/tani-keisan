@@ -7,27 +7,30 @@
         mc:Ignorable="d"
         Title="MainWindow" 
         Height="350" Width="400" 
-        WindowStyle="None" ResizeMode="CanResize" ShowInTaskbar="False"
+        WindowStyle="None" 
         AllowsTransparency="True" Background="Black">
     <Grid>
-        <!-- 高さの比 時計，単位表，下部バーの順 -->
-        <Grid.RowDefinitions>
-            <RowDefinition Height="2*"/>
-            <RowDefinition Height="3*"/>
-            <RowDefinition Height="24px"/>
-        </Grid.RowDefinitions>
-        <!-- 時計ここから -->
-        <Grid Grid.Row="0" Background="White" Margin="14 14 14 7">
+        <!-- 画面全体のGrid ウィンドウハンドルを置く -->
+        <Grid>
+            <!-- 画面全体のGrid 分割して時計とかを置く -->
+            <!-- 高さの比 時計，単位表，下部バーの順 -->
             <Grid.RowDefinitions>
-                <RowDefinition Height="2.5*"/>
-                <RowDefinition Height="*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="24px"/>
             </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-            <Viewbox Grid.ColumnSpan="2" Margin="0">
-                <TextBlock 
+            <!-- 時計ここから -->
+            <Grid Grid.Row="0" Background="White" Margin="14 14 14 7">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2.5*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Viewbox Grid.ColumnSpan="2" Margin="0">
+                    <TextBlock 
                 x:Name = "clock" 
                 Text="00:00:00"  
                 FontFamily="Arial"
@@ -37,9 +40,9 @@
                 Grid.Row="0"
                 Grid.Column="0"
                 Grid.ColumnSpan="2" />
-            </Viewbox>
-            <Viewbox Grid.Row="1">
-                <TextBlock 
+                </Viewbox>
+                <Viewbox Grid.Row="1">
+                    <TextBlock 
                     Text="天気"  
                     FontFamily="Arial"
                     HorizontalAlignment="Center"
@@ -47,9 +50,9 @@
                     FontSize="20" 
                     Grid.Row="1"
                     Grid.Column="0" />
-            </Viewbox>
-            <Viewbox Grid.Column="1" Grid.Row="1">
-                <TextBlock 
+                </Viewbox>
+                <Viewbox Grid.Column="1" Grid.Row="1">
+                    <TextBlock 
                 x:Name = "date" 
                 Text="0000/00/00"  
                 FontFamily="Arial"
@@ -58,123 +61,181 @@
                 FontSize="20" 
                 Grid.Row="1"
                 Grid.Column="1" />
-            </Viewbox>
-        </Grid>
-        <!-- 時計ここまで -->
+                </Viewbox>
+            </Grid>
+            <!-- 時計ここまで -->
 
-        <!-- 単位計算ここから -->
-        <Grid Grid.Row="1" Background="White" Margin="14 7 14 14">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-            <!-- 左右に分割されてる5行 -->
-            <Viewbox Grid.Column="0" Grid.Row="0" Margin="2">
-                <TextBlock Grid.Row="0" Grid.Column="0" Text="教養" FontSize="20" />
-            </Viewbox>
-            <Viewbox Grid.Column="0" Grid.Row="1" Margin="2">
-                <TextBlock x:Name="kyouyouA" Grid.Row="1" Grid.Column="0" Text="教養A 0/2" FontSize="20" />
-            </Viewbox>
-            <Viewbox Grid.Column="0" Grid.Row="2" Margin="2">
-                <TextBlock x:Name="kyouyouB" Grid.Row="2" Grid.Column="0" Text="教養B 0/2" FontSize="20" />
-            </Viewbox>
-            <Viewbox Grid.Column="0" Grid.Row="3" Margin="2">
-                <TextBlock x:Name="gakusaiA" Grid.Row="3" Grid.Column="0" Text="学際A 0/2" FontSize="20" />
-            </Viewbox>
-            <Viewbox Grid.Column="0" Grid.Row="4" Margin="2">
-                <TextBlock x:Name="kyouyouSum" Grid.Row="4" Grid.Column="0" Text="教養合計 0/2" FontSize="20" />
-            </Viewbox>
-            <Viewbox Grid.Column="1" Grid.Row="0" Margin="2">
-                <TextBlock Grid.Row="0" Grid.Column="1" Text="専門" FontSize="20" />
-            </Viewbox>
-            <Viewbox Grid.Column="1" Grid.Row="1" Margin="2">
-                <TextBlock x:Name="specialA" Grid.Row="1" Grid.Column="1" Text="必修0/64" FontSize="20" />
-            </Viewbox>
-            <Viewbox Grid.Column="1" Grid.Row="2" Margin="2">
-                <TextBlock x:Name="specialB" Grid.Row="2" Grid.Column="1" Text="選必0/16" FontSize="20" />
-            </Viewbox>
-            <Viewbox Grid.Column="1" Grid.Row="3" Margin="2">
-                <TextBlock x:Name="specialC" Grid.Row="3" Grid.Column="1" Text="選択0/6" FontSize="20" />
-            </Viewbox>
-            <Viewbox Grid.Column="1" Grid.Row="4" Margin="2">
-                <TextBlock x:Name="specialSum" Grid.Row="4" Grid.Column="1" Text="専門合計0/86" FontSize="20" />
-            </Viewbox>
-            <!-- 下の2行 -->
-            <Viewbox Grid.Row="5" Grid.ColumnSpan="2" Margin="2">
-                <TextBlock x:Name="creditFree" Grid.Row="5" Grid.ColumnSpan="2" Text="自由科目 0/10" FontSize="20" />
-            </Viewbox>
-            <Viewbox Grid.Row="6" Grid.ColumnSpan="2" Margin="2">
-                <TextBlock x:Name="creditSum" Grid.Row="6" Grid.ColumnSpan="2" Text="合計0/124" FontSize="20" />
-            </Viewbox>
-            <!-- 罫線 横線6本，縦線1本の順番 -->
-            <Border BorderBrush="Black" Grid.Row="0" Grid.ColumnSpan="2" BorderThickness="0 0 0 2" />
-            <Border BorderBrush="Black" Grid.Row="1" Grid.ColumnSpan="2" BorderThickness="0 0 0 2" />
-            <Border BorderBrush="Black" Grid.Row="2" Grid.ColumnSpan="2" BorderThickness="0 0 0 2" />
-            <Border BorderBrush="Black" Grid.Row="3" Grid.ColumnSpan="2" BorderThickness="0 0 0 2" />
-            <Border BorderBrush="Black" Grid.Row="4" Grid.ColumnSpan="2" BorderThickness="0 0 0 2" />
-            <Border BorderBrush="Black" Grid.Row="5" Grid.ColumnSpan="2" BorderThickness="0 0 0 2" />
-            <Border BorderBrush="Black" Grid.Row="0" Grid.RowSpan="5" BorderThickness="0 0 2 0" />
-        </Grid>
-        <!-- 単位計算ここまで -->
+            <!-- 単位計算ここから -->
+            <Grid Grid.Row="1" Background="White" Margin="14 7 14 14">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <!-- 左右に分割されてる5行 -->
+                <Viewbox Grid.Column="0" Grid.Row="0" Margin="2">
+                    <TextBlock Grid.Row="0" Grid.Column="0" Text="教養" FontSize="20" />
+                </Viewbox>
+                <Viewbox Grid.Column="0" Grid.Row="1" Margin="2">
+                    <TextBlock x:Name="kyouyouA" Grid.Row="1" Grid.Column="0" Text="教養A 0/2" FontSize="20" />
+                </Viewbox>
+                <Viewbox Grid.Column="0" Grid.Row="2" Margin="2">
+                    <TextBlock x:Name="kyouyouB" Grid.Row="2" Grid.Column="0" Text="教養B 0/2" FontSize="20" />
+                </Viewbox>
+                <Viewbox Grid.Column="0" Grid.Row="3" Margin="2">
+                    <TextBlock x:Name="gakusaiA" Grid.Row="3" Grid.Column="0" Text="学際A 0/2" FontSize="20" />
+                </Viewbox>
+                <Viewbox Grid.Column="0" Grid.Row="4" Margin="2">
+                    <TextBlock x:Name="kyouyouSum" Grid.Row="4" Grid.Column="0" Text="教養合計 0/2" FontSize="20" />
+                </Viewbox>
+                <Viewbox Grid.Column="1" Grid.Row="0" Margin="2">
+                    <TextBlock Grid.Row="0" Grid.Column="1" Text="専門" FontSize="20" />
+                </Viewbox>
+                <Viewbox Grid.Column="1" Grid.Row="1" Margin="2">
+                    <TextBlock x:Name="specialA" Grid.Row="1" Grid.Column="1" Text="必修0/64" FontSize="20" />
+                </Viewbox>
+                <Viewbox Grid.Column="1" Grid.Row="2" Margin="2">
+                    <TextBlock x:Name="specialB" Grid.Row="2" Grid.Column="1" Text="選必0/16" FontSize="20" />
+                </Viewbox>
+                <Viewbox Grid.Column="1" Grid.Row="3" Margin="2">
+                    <TextBlock x:Name="specialC" Grid.Row="3" Grid.Column="1" Text="選択0/6" FontSize="20" />
+                </Viewbox>
+                <Viewbox Grid.Column="1" Grid.Row="4" Margin="2">
+                    <TextBlock x:Name="specialSum" Grid.Row="4" Grid.Column="1" Text="専門合計0/86" FontSize="20" />
+                </Viewbox>
+                <!-- 下の2行 -->
+                <Viewbox Grid.Row="5" Grid.ColumnSpan="2" Margin="2">
+                    <TextBlock x:Name="creditFree" Grid.Row="5" Grid.ColumnSpan="2" Text="自由科目 0/10" FontSize="20" />
+                </Viewbox>
+                <Viewbox Grid.Row="6" Grid.ColumnSpan="2" Margin="2">
+                    <TextBlock x:Name="creditSum" Grid.Row="6" Grid.ColumnSpan="2" Text="合計0/124" FontSize="20" />
+                </Viewbox>
+                <!-- 罫線 横線6本，縦線1本の順番 -->
+                <Border BorderBrush="Black" Grid.Row="0" Grid.ColumnSpan="2" BorderThickness="0 0 0 2" />
+                <Border BorderBrush="Black" Grid.Row="1" Grid.ColumnSpan="2" BorderThickness="0 0 0 2" />
+                <Border BorderBrush="Black" Grid.Row="2" Grid.ColumnSpan="2" BorderThickness="0 0 0 2" />
+                <Border BorderBrush="Black" Grid.Row="3" Grid.ColumnSpan="2" BorderThickness="0 0 0 2" />
+                <Border BorderBrush="Black" Grid.Row="4" Grid.ColumnSpan="2" BorderThickness="0 0 0 2" />
+                <Border BorderBrush="Black" Grid.Row="5" Grid.ColumnSpan="2" BorderThickness="0 0 0 2" />
+                <Border BorderBrush="Black" Grid.Row="0" Grid.RowSpan="5" BorderThickness="0 0 2 0" />
+            </Grid>
+            <!-- 単位計算ここまで -->
 
-        <!-- 下部メニューバーここから -->
-        <Grid Grid.Row="3" Grid.ColumnSpan="2" Background="#FECFF8">
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                <Button Click="OpenContextMenu">
-                    <Button.Template>
-                        <ControlTemplate TargetType="Button">
-                            <TextBlock Text="位置" Padding="4" Background="Transparent"
+            <!-- 下部メニューバーここから -->
+            <Grid Grid.Row="2" Grid.ColumnSpan="2" Background="#FECFF8">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button Click="OpenContextMenu">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <TextBlock Text="位置" Padding="4" Background="Transparent"
                                        VerticalAlignment="Center" HorizontalAlignment="Center" 
                                        MouseLeave="ButtomButton_MouseLeave" MouseEnter="ButtomButton_MouseEnter" />
-                        </ControlTemplate>
-                    </Button.Template>
-                    <Button.ContextMenu>
-                        <ContextMenu>
-                            <MenuItem Header="右上" Click="Change_Pos" />
-                            <MenuItem Header="左上" Click="Change_Pos" />
-                            <MenuItem Header="右下" Click="Change_Pos" />
-                            <MenuItem Header="左下" Click="Change_Pos" />
-                        </ContextMenu>
-                    </Button.ContextMenu>
-                </Button>
-                <Button>
-                    <Button.Template>
-                        <ControlTemplate TargetType="Button">
-                            <TextBlock Text="天気予報設定" Padding="4" Background="Transparent"
+                            </ControlTemplate>
+                        </Button.Template>
+                        <Button.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem Header="右上" Click="Change_Pos" />
+                                <MenuItem Header="左上" Click="Change_Pos" />
+                                <MenuItem Header="右下" Click="Change_Pos" />
+                                <MenuItem Header="左下" Click="Change_Pos" />
+                            </ContextMenu>
+                        </Button.ContextMenu>
+                    </Button>
+                    <Button>
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <TextBlock Text="天気予報設定" Padding="4" Background="Transparent"
                                        VerticalAlignment="Center" HorizontalAlignment="Center" 
                                        MouseLeave="ButtomButton_MouseLeave" MouseEnter="ButtomButton_MouseEnter" />
-                        </ControlTemplate>
-                    </Button.Template>
-                </Button>
-                <Button>
-                    <Button.Template>
-                        <ControlTemplate TargetType="Button">
-                            <TextBlock Text="単語登録" Padding="4" Background="Transparent" 
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button>
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <TextBlock Text="単語登録" Padding="4" Background="Transparent" 
                                        VerticalAlignment="Center" HorizontalAlignment="Center" 
                                        MouseLeave="ButtomButton_MouseLeave" MouseEnter="ButtomButton_MouseEnter" />
-                        </ControlTemplate>
-                    </Button.Template>
-                </Button>
-                <Button Click="QuitButton_Click">
-                    <Button.Template>
-                        <ControlTemplate TargetType="Button">
-                            <TextBlock Text="終了" Padding="4" Background="Transparent" 
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button Click="QuitButton_Click">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <TextBlock Text="終了" Padding="4" Background="Transparent" 
                                        VerticalAlignment="Center" HorizontalAlignment="Center" 
                                        MouseLeave="ButtomButton_MouseLeave" MouseEnter="ButtomButton_MouseEnter" />
-                        </ControlTemplate>
-                    </Button.Template>
-                </Button>
-            </StackPanel>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </StackPanel>
+            </Grid>
+        </Grid>
+
+        <!-- ウィンドウハンドル ウィンドウ移動ハンドル，縦横方向サイズ変更，斜め方向サイズ変更の順 -->
+        <!-- ウィンドウ移動ハンドル -->
+        <Grid x:Name="moveHandle" Background="Transparent" VerticalAlignment="Top" Height="8" Margin="4" />
+        <!-- ウィンドウサイズ変更ハンドル 左，上，右，下の順 -->
+        <Grid 
+            Background="Transparent"
+            HorizontalAlignment="Left" 
+            Width="4"
+            VerticalAlignment="Stretch"
+            PreviewMouseLeftButtonDown="WindowSizeLeft" Cursor="SizeWE" >
+        </Grid>
+        <Grid 
+            Background="Transparent"
+            VerticalAlignment="Top" 
+            Height="4"
+            HorizontalAlignment="Stretch"
+            PreviewMouseLeftButtonDown="WindowSizeTop" Cursor="SizeNS" >
+        </Grid>
+        <Grid 
+            Background="Transparent"
+            HorizontalAlignment="Right" 
+            Width="4"
+            VerticalAlignment="Stretch"
+            PreviewMouseLeftButtonDown="WindowSizeRight" Cursor="SizeWE" >
+        </Grid>
+        <Grid 
+            Background="Transparent"
+            VerticalAlignment="Bottom" 
+            Height="4"
+            HorizontalAlignment="Stretch"
+            PreviewMouseLeftButtonDown="WindowSizeBottom" Cursor="SizeNS" >
+        </Grid>
+        <!-- ウィンドウサイズ変更ハンドル 左上，右上，左下，右下の順 -->
+        <Grid 
+            Background="Transparent"
+            VerticalAlignment="Top" HorizontalAlignment="Left"
+            Width="4" Height="4" 
+            PreviewMouseLeftButtonDown="WindowSizeLeftTop" Cursor="SizeNWSE" >
+        </Grid>
+        <Grid 
+            Background="Transparent"
+            VerticalAlignment="Top" HorizontalAlignment="Right"
+            Width="4" Height="4" 
+            PreviewMouseLeftButtonDown="WindowSizeRightTop" Cursor="SizeNESW" >
+        </Grid>
+        <Grid 
+            Background="Transparent"
+            VerticalAlignment="Bottom" HorizontalAlignment="Left"
+            Width="4" Height="4" 
+            PreviewMouseLeftButtonDown="WindowSizeLeftBottom" Cursor="SizeNESW" >
+        </Grid>
+        <Grid 
+            Background="Transparent"
+            VerticalAlignment="Bottom" HorizontalAlignment="Right"
+            Width="4" Height="4" 
+            PreviewMouseLeftButtonDown="WindowSizeRightBottom" Cursor="SizeNWSE" >
         </Grid>
     </Grid>
-
 </Window>

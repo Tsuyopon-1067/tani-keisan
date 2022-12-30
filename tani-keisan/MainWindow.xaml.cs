@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.InteropServices;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -27,6 +28,7 @@ namespace tani_keisan
             timer.Start();
 
             setDate();
+            moveHandle.MouseLeftButtonDown += (o, e) => DragMove(); // ウィンドウ移動ハンドルの追加
         }
         // solution : https://qiita.com/Kosen-amai/items/88b3d987b41f46ebea4b
         /// <summary>
@@ -111,6 +113,48 @@ namespace tani_keisan
             contextMenu.PlacementTarget = btn;
             contextMenu.IsOpen = true;
             e.Handled = true;
+        }
+
+        [DllImport("user32.dll")]
+        public static extern bool PostMessage(IntPtr hWnd, uint Msg, IntPtr wParam, IntPtr lParam);
+
+
+        private void ChangeWindowSize(int n)
+        {
+            IntPtr hwnd = new System.Windows.Interop.WindowInteropHelper(this).Handle;
+            PostMessage(hwnd, 0xA1, (IntPtr)n, IntPtr.Zero);
+        }
+        private void WindowSizeLeftTop(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            ChangeWindowSize(13);
+        }
+        private void WindowSizeRightTop(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            ChangeWindowSize(14);
+        }
+        private void WindowSizeLeftBottom(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            ChangeWindowSize(16);
+        }
+        private void WindowSizeRightBottom(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            ChangeWindowSize(17);
+        }
+        private void WindowSizeLeft(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            ChangeWindowSize(10);
+        }
+        private void WindowSizeTop(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            ChangeWindowSize(12);
+        }
+        private void WindowSizeRight(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            ChangeWindowSize(11);
+        }
+        private void WindowSizeBottom(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            ChangeWindowSize(15);
         }
     }
 }
