@@ -161,7 +161,7 @@
                     <Button>
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
-                                <TextBlock Text="単語登録" Padding="4" Background="Transparent" 
+                                <TextBlock Text="単位登録" Padding="4" Background="Transparent" 
                                        VerticalAlignment="Center" HorizontalAlignment="Center" 
                                        MouseLeave="ButtomButton_MouseLeave" MouseEnter="ButtomButton_MouseEnter" />
                             </ControlTemplate>
