@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:tani_keisan"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="400" WindowStyle="None" ResizeMode="NoResize" ShowInTaskbar="False">
+        Title="MainWindow" Height="450" Width="400" WindowStyle="None" ResizeMode="CanResize" ShowInTaskbar="False">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -22,7 +22,8 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <TextBlock 
+            <Viewbox Grid.ColumnSpan="2" Margin="0,0,0,47" Grid.RowSpan="2">
+                <TextBlock 
                 x:Name = "clock" 
                 Text="00:00:00"  
                 FontFamily="Arial"
@@ -33,16 +34,20 @@
                 Grid.Row="0"
                 Grid.Column="0"
                 Grid.ColumnSpan="2" />
-            <TextBlock 
-                Text="00:00:00"  
-                FontFamily="Arial"
-                Margin="6" 
-                HorizontalAlignment="Center"
-                VerticalAlignment="Center" 
-                FontSize="20" 
-                Grid.Row="1"
-                Grid.Column="0" />
-            <TextBlock 
+            </Viewbox>
+            <Viewbox Grid.Row="1">
+                <TextBlock 
+                    Text="00:00:00"  
+                    FontFamily="Arial"
+                    Margin="6" 
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center" 
+                    FontSize="20" 
+                    Grid.Row="1"
+                    Grid.Column="0" />
+            </Viewbox>
+            <Viewbox Grid.Column="1" Grid.Row="1">
+                <TextBlock 
                 x:Name = "date" 
                 Text="0000/00/00"  
                 FontFamily="Arial"
@@ -52,9 +57,10 @@
                 FontSize="20" 
                 Grid.Row="1"
                 Grid.Column="1" />
+            </Viewbox>
         </Grid>
         <!-- 時計ここまで -->
-        
+
         <!-- 単位計算ここから -->
         <Grid Grid.Row="1">
             <Grid.RowDefinitions>
@@ -71,29 +77,62 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <!-- 左右に分割されてる5行 -->
-            <TextBlock Grid.Row="0" Grid.Column="0" Text="教養" />
-            <TextBlock x:Name="kyouyouA" Grid.Row="1" Grid.Column="0" Text="教養A 0/2" />
-            <TextBlock x:Name="kyouyouB" Grid.Row="2" Grid.Column="0" Text="教養A 0/2" />
-            <TextBlock x:Name="gakusaiA" Grid.Row="3" Grid.Column="0" Text="教養A 0/2" />
-            <TextBlock x:Name="kyouyouSum" Grid.Row="4" Grid.Column="0" Text="教養A 0/2" />
-            <TextBlock Grid.Row="0" Grid.Column="1" Text="専門" />
-            <TextBlock x:Name="specialA" Grid.Row="1" Grid.Column="1" Text="必修0/64" />
-            <TextBlock x:Name="specialB" Grid.Row="2" Grid.Column="1" Text="選必0/16" />
-            <TextBlock x:Name="specialC" Grid.Row="3" Grid.Column="1" Text="選択0/6" />
-            <TextBlock x:Name="specialSum" Grid.Row="4" Grid.Column="1" Text="合計0/86" />
+            <Viewbox Grid.Column="0" Grid.Row="0">
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="教養" FontSize="20" />
+            </Viewbox>
+            <Viewbox Grid.Column="0" Grid.Row="1">
+                <TextBlock x:Name="kyouyouA" Grid.Row="1" Grid.Column="0" Text="教養A 0/2" FontSize="20" />
+            </Viewbox>
+            <Viewbox Grid.Column="0" Grid.Row="2">
+                <TextBlock x:Name="kyouyouB" Grid.Row="2" Grid.Column="0" Text="教養A 0/2" FontSize="20" />
+            </Viewbox>
+            <Viewbox Grid.Column="0" Grid.Row="3">
+                <TextBlock x:Name="gakusaiA" Grid.Row="3" Grid.Column="0" Text="教養A 0/2" FontSize="20" />
+            </Viewbox>
+            <Viewbox Grid.Column="0" Grid.Row="4">
+                <TextBlock x:Name="kyouyouSum" Grid.Row="4" Grid.Column="0" Text="教養A 0/2" FontSize="20" />
+            </Viewbox>
+            <Viewbox Grid.Column="1" Grid.Row="0">
+                <TextBlock Grid.Row="0" Grid.Column="1" Text="専門" FontSize="20" />
+            </Viewbox>
+            <Viewbox Grid.Column="1" Grid.Row="1">
+                <TextBlock x:Name="specialA" Grid.Row="1" Grid.Column="1" Text="必修0/64" FontSize="20" />
+            </Viewbox>
+            <Viewbox Grid.Column="1" Grid.Row="2">
+                <TextBlock x:Name="specialB" Grid.Row="2" Grid.Column="1" Text="選必0/16" FontSize="20" />
+            </Viewbox>
+            <Viewbox Grid.Column="1" Grid.Row="3">
+                <TextBlock x:Name="specialC" Grid.Row="3" Grid.Column="1" Text="選択0/6" FontSize="20" />
+            </Viewbox>
+            <Viewbox Grid.Column="1" Grid.Row="4">
+                <TextBlock x:Name="specialSum" Grid.Row="4" Grid.Column="1" Text="合計0/86" FontSize="20" />
+            </Viewbox>
             <!-- 下の2行 -->
-            <TextBlock x:Name="creditFree" Grid.Row="5" Grid.ColumnSpan="2" Text="自由科目 0/10" />
-            <TextBlock x:Name="creditSum" Grid.Row="6" Grid.ColumnSpan="2" Text="合計0/124" />
+            <Viewbox Grid.Column="0" Grid.Row="5">
+                <TextBlock x:Name="creditFree" Grid.Row="5" Grid.ColumnSpan="2" Text="自由科目 0/10" FontSize="20" />
+            </Viewbox>
+            <Viewbox Grid.Column="1" Grid.Row="5">
+                <TextBlock x:Name="creditSum" Grid.Row="6" Grid.ColumnSpan="2" Text="合計0/124" FontSize="20" />
+            </Viewbox>
         </Grid>
         <!-- 単位計算ここまで -->
 
         <!-- 下部メニューバーここから -->
         <Grid Grid.Row="3" Grid.ColumnSpan="2">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                <TextBlock Text="aaa" />
-                <TextBlock Text="aaa" />
-                <TextBlock Text="aaa" />
-                <TextBlock Text="aaa" />
+                <Button Content="位置" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" Click="Button_Click_1">
+                    <Button.ContextMenu>
+                        <ContextMenu>
+                            <MenuItem Header="右上" Click="Change_Pos"></MenuItem>
+                            <MenuItem Header="左上" Click="Change_Pos"></MenuItem>
+                            <MenuItem Header="右下" Click="Change_Pos"></MenuItem>
+                            <MenuItem Header="左下" Click="Change_Pos"></MenuItem>
+                        </ContextMenu>
+                    </Button.ContextMenu>
+                </Button>
+                <Button Content="天気予報設定" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" Click="Button_Click_2" />
+                <Button Content="単位登録" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" Click="Button_Click_3" />
+                <Button Content="終了" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" Click="Button_Click_4" />
             </StackPanel>
         </Grid>
     </Grid>
