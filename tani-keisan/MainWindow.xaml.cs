@@ -1,17 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using System.Windows.Threading;
 
 namespace tani_keisan
@@ -67,10 +58,6 @@ namespace tani_keisan
             date.Text = now.ToString("yyyy/MM/dd");
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-
-        }
 
         private void Change_Pos(object sender, RoutedEventArgs e)
         {
@@ -97,24 +84,33 @@ namespace tani_keisan
                     break;
             }
         }
-
-        private void Button_Click_2(object sender, RoutedEventArgs e)
-        {
-
-        }
-        private void Button_Click_3(object sender, RoutedEventArgs e)
-        {
-
-        }
-        private void Button_Click_4(object sender, RoutedEventArgs e)
+        private void QuitButton_Click(object sender, RoutedEventArgs e)
         {
             timer.Stop();
             this.Close();
         }
 
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        SolidColorBrush bottomBarColor = new SolidColorBrush(Color.FromArgb(0x00, 0xFF, 0x00, 0x00)); // 通常時の色(透明にしておく)
+        SolidColorBrush bottomBarSelectedColor = new SolidColorBrush(Color.FromArgb(0xFF, 0xD9, 0xB5, 0xD4)); // 選択時の色 FF D9 B5 D4
+        
+        // 下部のボタンにマウスが重なると色が変わる
+        private void ButtomButton_MouseEnter(object sender, MouseEventArgs e)
         {
+            ((TextBlock)sender).Background = bottomBarSelectedColor;
+        }
+        // 下部のボタンからマウスが離れると色が戻る
+        private void ButtomButton_MouseLeave(object sender, MouseEventArgs e)
+        {
+            ((TextBlock)sender).Background = bottomBarColor;
+        }
 
+        private void OpenContextMenu(object sender, RoutedEventArgs e)
+        {
+            Button btn = sender as Button;
+            ContextMenu contextMenu = btn.ContextMenu;
+            contextMenu.PlacementTarget = btn;
+            contextMenu.IsOpen = true;
+            e.Handled = true;
         }
     }
 }

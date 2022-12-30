@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:tani_keisan"
+        xmlns:local="clr-namespace:tani_keisan" xmlns:behaviors="clr-namespace:Microsoft.VisualBasic;assembly=Microsoft.VisualBasic.Core"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="400" WindowStyle="None" ResizeMode="CanResize" ShowInTaskbar="False">
     <Grid>
@@ -108,31 +108,62 @@
                 <TextBlock x:Name="specialSum" Grid.Row="4" Grid.Column="1" Text="合計0/86" FontSize="20" />
             </Viewbox>
             <!-- 下の2行 -->
-            <Viewbox Grid.Column="0" Grid.Row="5">
+            <Viewbox Grid.Row="5" Grid.ColumnSpan="2">
                 <TextBlock x:Name="creditFree" Grid.Row="5" Grid.ColumnSpan="2" Text="自由科目 0/10" FontSize="20" />
             </Viewbox>
-            <Viewbox Grid.Column="1" Grid.Row="5">
+            <Viewbox Grid.Row="6" Grid.ColumnSpan="2">
                 <TextBlock x:Name="creditSum" Grid.Row="6" Grid.ColumnSpan="2" Text="合計0/124" FontSize="20" />
             </Viewbox>
         </Grid>
         <!-- 単位計算ここまで -->
 
         <!-- 下部メニューバーここから -->
-        <Grid Grid.Row="3" Grid.ColumnSpan="2">
+        <Grid Grid.Row="3" Grid.ColumnSpan="2" Background="#FECFF8">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                <Button Content="位置" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" Click="Button_Click_1">
+                <Button Click="OpenContextMenu">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <TextBlock Text="位置" Padding="4" Background="Transparent"
+                                       VerticalAlignment="Center" HorizontalAlignment="Center" 
+                                       MouseLeave="ButtomButton_MouseLeave" MouseEnter="ButtomButton_MouseEnter" />
+                        </ControlTemplate>
+                    </Button.Template>
                     <Button.ContextMenu>
                         <ContextMenu>
-                            <MenuItem Header="右上" Click="Change_Pos"></MenuItem>
-                            <MenuItem Header="左上" Click="Change_Pos"></MenuItem>
-                            <MenuItem Header="右下" Click="Change_Pos"></MenuItem>
-                            <MenuItem Header="左下" Click="Change_Pos"></MenuItem>
+                            <MenuItem Header="右上" Click="Change_Pos" />
+                            <MenuItem Header="左上" Click="Change_Pos" />
+                            <MenuItem Header="右下" Click="Change_Pos" />
+                            <MenuItem Header="左下" Click="Change_Pos" />
                         </ContextMenu>
                     </Button.ContextMenu>
                 </Button>
-                <Button Content="天気予報設定" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" Click="Button_Click_2" />
-                <Button Content="単位登録" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" Click="Button_Click_3" />
-                <Button Content="終了" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" Click="Button_Click_4" />
+                <Button>
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <TextBlock Text="天気予報設定" Padding="4" Background="Transparent"
+                                       VerticalAlignment="Center" HorizontalAlignment="Center" 
+                                       MouseLeave="ButtomButton_MouseLeave" MouseEnter="ButtomButton_MouseEnter" />
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Button>
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <TextBlock Text="単語登録" Padding="4" Background="Transparent" 
+                                       VerticalAlignment="Center" HorizontalAlignment="Center" 
+                                       MouseLeave="ButtomButton_MouseLeave" MouseEnter="ButtomButton_MouseEnter" />
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Button Click="QuitButton_Click">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <TextBlock Text="終了" Padding="4" Background="Transparent" 
+                                       VerticalAlignment="Center" HorizontalAlignment="Center" 
+                                       MouseLeave="ButtomButton_MouseLeave" MouseEnter="ButtomButton_MouseEnter" />
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
             </StackPanel>
         </Grid>
     </Grid>
