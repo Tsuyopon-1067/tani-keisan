@@ -34,10 +34,10 @@
                     SelectedValueBinding="{Binding category, Mode=TwoWay}"
                     SelectedValuePath="Key" />
                 <DataGridTextColumn
-                    Width="*"
+                    Width="56"
                     Binding="{Binding credit}"
                     Header="単位数" />
-                <DataGridTemplateColumn Width="*" Header="">
+                <DataGridTemplateColumn Width="36" Header="">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <Button
