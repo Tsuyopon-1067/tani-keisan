@@ -31,36 +31,36 @@
                 </Grid.ColumnDefinitions>
                 <Viewbox Grid.ColumnSpan="2" Margin="0">
                     <TextBlock 
-                x:Name = "clock" 
-                Text="00:00:00"  
-                FontFamily="Arial"
-                HorizontalAlignment="Center"
-                VerticalAlignment="Center" 
-                FontSize="48" 
-                Grid.Row="0"
-                Grid.Column="0"
-                Grid.ColumnSpan="2" />
+                        x:Name = "clock" 
+                        Text="00:00:00"  
+                        FontFamily="Arial"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center" 
+                        FontSize="48" 
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="2" />
                 </Viewbox>
                 <Viewbox Grid.Row="1">
                     <TextBlock 
-                    Text="天気"  
-                    FontFamily="Arial"
-                    HorizontalAlignment="Center"
-                    VerticalAlignment="Center" 
-                    FontSize="20" 
-                    Grid.Row="1"
-                    Grid.Column="0" />
+                        Text="天気"  
+                        FontFamily="Arial"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center" 
+                        FontSize="20" 
+                        Grid.Row="1"
+                        Grid.Column="0" />
                 </Viewbox>
                 <Viewbox Grid.Column="1" Grid.Row="1">
                     <TextBlock 
-                x:Name = "date" 
-                Text="0000/00/00"  
-                FontFamily="Arial"
-                HorizontalAlignment="Center"
-                VerticalAlignment="Center" 
-                FontSize="20" 
-                Grid.Row="1"
-                Grid.Column="1" />
+                        x:Name = "date" 
+                        Text="0000/00/00"  
+                        FontFamily="Arial"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center" 
+                        FontSize="20" 
+                        Grid.Row="1"
+                        Grid.Column="1" />
                 </Viewbox>
             </Grid>
             <!-- 時計ここまで -->
