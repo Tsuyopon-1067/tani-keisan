@@ -154,7 +154,7 @@
                             </ControlTemplate>
                         </Button.Template>
                     </Button>
-                    <Button>
+                    <Button Click="CreditResisterButton_Click">
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
                                 <TextBlock Text="単位登録" Padding="4" Background="Transparent" 

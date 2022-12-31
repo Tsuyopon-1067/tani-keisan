@@ -184,5 +184,17 @@ namespace tani_keisan
         {
             ChangeWindowSize(17);
         }
+
+
+        /// <summary>
+        /// 単位登録ボタンがクリックされた時に単位登録ウィンドウを表示するメソッド
+        /// </summary>
+        /// <param name="sender">おまじない イベントハンドラとして必要</param>
+        /// <param name="e">おまじない イベントハンドラとして必要</param>
+        private void CreditResisterButton_Click(object sender, RoutedEventArgs e)
+        {
+            CreditResister cr = new CreditResister();
+            cr.Show();
+        }
     }
 }
