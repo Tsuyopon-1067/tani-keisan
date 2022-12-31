@@ -8,4 +8,23 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="weatherIco\cloudy.png" />
+    <None Remove="weatherIco\suny.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Remove="weatherIco\cloudy.xaml" />
+    <Page Remove="weatherIco\suny.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AngleSharp" Version="0.17.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="weatherIco\cloudy.png" />
+    <Resource Include="weatherIco\suny.png" />
+  </ItemGroup>
+
 </Project>

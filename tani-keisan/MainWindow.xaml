@@ -29,6 +29,7 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
+                <!-- 時刻表示 -->
                 <Viewbox Grid.ColumnSpan="2" Margin="0">
                     <TextBlock 
                         x:Name = "clock" 
@@ -41,17 +42,12 @@
                         Grid.Column="0"
                         Grid.ColumnSpan="2" />
                 </Viewbox>
-                <Viewbox Grid.Row="1">
-                    <TextBlock 
-                        Text="天気"  
-                        FontFamily="Arial"
-                        HorizontalAlignment="Center"
-                        VerticalAlignment="Center" 
-                        FontSize="20" 
-                        Grid.Row="1"
-                        Grid.Column="0" />
+                <!-- 天気表示 -->
+                <Viewbox Grid.Row="1" Margin="8 0">
+                    <local:WeatherDisplay />
                 </Viewbox>
-                <Viewbox Grid.Column="1" Grid.Row="1">
+                <!-- 日付表示 -->
+                <Viewbox Grid.Column="1" Grid.Row="1" Margin="3">
                     <TextBlock 
                         x:Name = "date" 
                         Text="0000/00/00"  
