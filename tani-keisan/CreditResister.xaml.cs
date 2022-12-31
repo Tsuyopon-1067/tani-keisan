@@ -30,6 +30,10 @@ namespace tani_keisan
             subjectCategoryColumn.ItemsSource = subjectCategory;
             dataGrid.ItemsSource = credits;
         }
+
+        /// <summary>
+        /// enumの値をコンボボックスに表示する文字列に変換するディクショナリ mapみたいなやつ
+        /// </summary>
         public Dictionary<SuubjectCategoryType, string> subjectCategory { get; } = new Dictionary<SuubjectCategoryType, string>
         {
             [SuubjectCategoryType.kyouyouA] = "教養(教養A)",
@@ -42,11 +46,21 @@ namespace tani_keisan
             [SuubjectCategoryType.free] = "自由科目"
         };
 
+        /// <summary>
+        /// 単位登録ボタンが押された時に呼び出されるメソッド
+        /// </summary>
+        /// <param name="sender">おまじない イベントハンドラとして必要</param>
+        /// <param name="e">おまじない イベントハンドラとして必要</param>
         private void AddRowButton_Click(object sender, RoutedEventArgs e)
         {
             credits.Add(new Credit("", 0, 0));
             dataGrid.ItemsSource = credits;
         }
+        /// <summary>
+        /// 登録済み単位削除ボタンが押された時に呼び出されるメソッド
+        /// </summary>
+        /// <param name="sender">object型だがCredit型インスタンスとして扱う このインスタンスがListの中の選択されている（削除対象である）要素</param>
+        /// <param name="e">おまじない イベントハンドラとして必要</param>
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
         {
             var tag = ((Button)sender).Tag as Credit;
