@@ -9,13 +9,16 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="32"/>
+            <RowDefinition Height="56"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="56"/>
         </Grid.RowDefinitions>
+        <!-- 取得単位一覧表示・登録フォーム Excel的なやつ -->
         <DataGrid 
             x:Name="dataGrid" 
             AutoGenerateColumns="False"
             CanUserAddRows="False"
-            Grid.Row="0">
+            Grid.Row="0" Grid.ColumnSpan="4">
             <DataGrid.ColumnHeaderStyle>
                 <Style TargetType="DataGridColumnHeader">
                     <Setter Property="HorizontalContentAlignment" Value="Center" />
@@ -49,8 +52,46 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
+        
+        <!-- 行追加ボタン -->
         <Button 
             Click="AddRowButton_Click"
-            Grid.Row="1">新規登録</Button>
+            Content="新規登録"
+            Grid.Row="1"
+            Margin="12"
+            Grid.ColumnSpan="2"
+            ToolTip="新規行を追加します"/>
+        <!--必要単位のテキストボックス群 -->
+        <Grid Grid.Row="2" Margin="12">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <local:CreditInput x:Name="kyouyouA" Grid.Row="0" Grid.Column="0" Text="必要教養A単位"  />
+            <local:CreditInput x:Name="kyouyouB" Grid.Row="1" Grid.Column="0" Text="必要教養B単位"  />
+            <local:CreditInput x:Name="gakusaiA" Grid.Row="2" Grid.Column="0" Text="必要学際A単位"  />
+            <local:CreditInput x:Name="kyouyouAll" Grid.Row="3" Grid.Column="0" Text="必要教養合計単位"  />
+            <local:CreditInput x:Name="senmonA" Grid.Row="0" Grid.Column="1" Text="必要専門必修単位"  />
+            <local:CreditInput x:Name="senmonB" Grid.Row="1" Grid.Column="1" Text="必要専門選択必修単位"  />
+            <local:CreditInput x:Name="senmonC" Grid.Row="2" Grid.Column="1" Text="必要専門選択単位"  />
+            <local:CreditInput x:Name="senmonAll" Grid.Row="3" Grid.Column="1" Text="必要専門合計単位"  />
+            <local:CreditInput x:Name="free" Grid.Row="4" Grid.Column="0" Text="必要自由科目単位"  />
+            <local:CreditInput x:Name="all" Grid.Row="4" Grid.Column="1" Text="必要合計単位"  />
+        </Grid>
+        <!-- 登録（終了）ボタン -->
+        <Button 
+            Click=""
+            Content="登録完了"
+            Grid.Row="3"
+            Margin="12"
+            Grid.ColumnSpan="2"
+            ToolTip="登録を完了してこのウィンドウを閉じます"/>
     </Grid>
 </Window>
