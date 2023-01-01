@@ -87,7 +87,6 @@
         </Grid>
         <!-- 登録（終了）ボタン -->
         <Button 
-            Click=""
             Content="登録完了"
             Grid.Row="3"
             Margin="12"
