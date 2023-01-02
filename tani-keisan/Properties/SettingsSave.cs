@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.IO;
 
 namespace tani_keisan.Properties
 {
@@ -51,12 +46,18 @@ namespace tani_keisan.Properties
             }
             catch (FileNotFoundException e)
             {
-                return new DisplayedCredit();
+                SaveDisplayedCredit();
+                dc = new DisplayedCredit();
+                return dc;
             }
             catch (DirectoryNotFoundException e)
             {
-                return new DisplayedCredit();
+                Directory.CreateDirectory("./settings");
+                SaveDisplayedCredit();
+                dc = new DisplayedCredit();
+                return dc;
             }
+
             sr.Close();
             dc = obj;
 
@@ -64,7 +65,7 @@ namespace tani_keisan.Properties
             {
                 dc = new DisplayedCredit();
             }
-            return obj;
+            return dc;
         }
     }
 }

@@ -5,6 +5,7 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Threading;
+using tani_keisan.Properties;
 
 namespace tani_keisan
 {
@@ -17,7 +18,8 @@ namespace tani_keisan
         /// <summary>
         /// 時刻表示用タイマー
         /// </summary>
-        private DispatcherTimer timer;
+        private DispatcherTimer timer; // 時計更新に使う
+        private DisplayedCredit dc; // 画面下部に表示する合計単位情報
 
         public MainWindow()
         {
@@ -29,6 +31,8 @@ namespace tani_keisan
 
             setDate();
             moveHandle.MouseLeftButtonDown += (o, e) => DragMove(); // ウィンドウ移動ハンドルの追加
+
+            dc = SettingsSave.ReadDisplayedCredit();
         }
         // solution : https://qiita.com/Kosen-amai/items/88b3d987b41f46ebea4b
         /// <summary>
@@ -39,8 +43,8 @@ namespace tani_keisan
         {
             var t = new DispatcherTimer(DispatcherPriority.SystemIdle);
 
-            // タイマーイベントの発生間隔を300ミリ秒に設定
-            t.Interval = TimeSpan.FromMilliseconds(200);
+            // タイマーイベントの発生間隔を100ミリ秒に設定
+            t.Interval = TimeSpan.FromMilliseconds(100);
 
             // タイマーイベントの定義
             t.Tick += (sender, e) => {
@@ -195,6 +199,31 @@ namespace tani_keisan
         {
             CreditResister cr = new CreditResister();
             cr.Show();
+        }
+
+        /// <summary>
+        /// メイン画面下部の合計単位情報を表示するメソッド
+        /// </summary>
+        private void SetCreditInfo()
+        {
+            /// <summary>
+            /// 画面に表示するフォーマットを作るローカル関数
+            /// </summary>
+            /// <param name="x">取得単位</param>
+            /// <param name="xAll">必要単位</param>
+            /// <param name="s">単位カテゴリ名</param>
+            string f(int x, int xAll, string s) => s + " " + x.ToString() + "/" + xAll.ToString();
+
+            kyouyouA.Text = f(dc.kyouyouA, dc.kyouyouAAll, "教養A");
+            kyouyouB.Text = f(dc.kyouyouB, dc.kyouyouBAll, "教養B");
+            gakusaiA.Text = f(dc.gakusaiA, dc.gakusaiAAll, "学際A");
+            kyouyouSum.Text = f(dc.kyouyouSum, dc.kyouyouSumAll, "教養合計");
+            specialA.Text = f(dc.specialA, dc.specialAAll, "必修");
+            specialB.Text = f(dc.specialB, dc.specialBAll, "選必");
+            specialC.Text = f(dc.specialC, dc.specialCAll, "選択");
+            specialSum.Text = f(dc.specialSum, dc.specialSumAll, "専門合計");
+            creditFree.Text = f(dc.free, dc.freeAll, "自由科目");
+            creditSum.Text = f(dc.sum, dc.sumAll, "合計");
         }
     }
 }
