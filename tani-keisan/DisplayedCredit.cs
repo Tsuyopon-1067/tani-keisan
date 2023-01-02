@@ -9,31 +9,28 @@ namespace tani_keisan
     /// <summary>
     /// メイン画面で表示されている単位情報を保存するクラス
     /// </summary>
-    /// <remarks>
-    /// 静的クラスにしてメイン画面から読む，画面遷移先から書き込めるようにする
-    /// </remarks>
-    public static class DisplayedCredit
+    public class DisplayedCredit
     {
         // Application settingsの値で初期化する
-        static int kyouyouA; // 教養A取得単位
-        static int kyouyouAAll; // 教養A必要単位
-        static int kyouyouB;
-        static int kyouyouBAll;
-        static int gakusaiA;
-        static int gakusaiAAll;
-        static int kyouyouSum;
-        static int kyouyouSumAll;
-        static int specialA; // 専門必修取得単位
-        static int specialAAll;
-        static int specialB; // 専門選択必修取得単位
-        static int specialBAll;
-        static int specialC; // 専門選択取得単位
-        static int specialCAll;
-        static int specialSum;
-        static int specialSumAll;
-        static int specialFree;
-        static int specialFreeAll;
-        static int sum;
-        static int sumAll;
+        public int kyouyouA { get; set; } // 教養A取得単位
+        public int kyouyouAAll { get; set; } // 教養A必要単位
+        public int kyouyouB { get; set; }
+        public int kyouyouBAll { get; set; }
+        public int gakusaiA { get; set; }
+        public int gakusaiAAll { get; set; }
+        public int kyouyouSum { get; set; }
+        public int kyouyouSumAll { get; set; }
+        public int specialA { get; set; } // 専門必修取得単位
+        public int specialAAll { get; set; }
+        public int specialB { get; set; } // 専門選択必修取得単位
+        public int specialBAll { get; set; }
+        public int specialC { get; set; } // 専門選択取得単位
+        public int specialCAll { get; set; }
+        public int specialSum { get; set; }
+        public int specialSumAll { get; set; }
+        public int specialFree { get; set; }
+        public int specialFreeAll { get; set; }
+        public int sum { get; set; }
+        public int sumAll { get; set; }
     }
 }
