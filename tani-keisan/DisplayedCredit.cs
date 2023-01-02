@@ -28,8 +28,8 @@ namespace tani_keisan
         public int specialCAll { get; set; }
         public int specialSum { get; set; }
         public int specialSumAll { get; set; }
-        public int specialFree { get; set; }
-        public int specialFreeAll { get; set; }
+        public int free { get; set; }
+        public int freeAll { get; set; }
         public int sum { get; set; }
         public int sumAll { get; set; }
         public DisplayedCredit()
@@ -48,8 +48,8 @@ namespace tani_keisan
             specialCAll = 0;
             specialSum = 0;
             specialSumAll = 0;
-            specialFree = 0;
-            specialFreeAll = 0;
+            free = 0;
+            freeAll = 0;
             sum = 0;
             sumAll = 0;
         }
