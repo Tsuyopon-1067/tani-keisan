@@ -44,10 +44,11 @@ namespace tani_keisan.Properties
             DisplayedCredit obj = (DisplayedCredit)serializer.Deserialize(sr);
             //ファイルを閉じる
             sr.Close();
+            dc = obj;
 
             if (obj == null)
             {
-                return new DisplayedCredit();
+                dc = new DisplayedCredit();
             }
             return obj;
         }
