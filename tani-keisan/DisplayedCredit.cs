@@ -32,5 +32,26 @@ namespace tani_keisan
         public int specialFreeAll { get; set; }
         public int sum { get; set; }
         public int sumAll { get; set; }
+        public DisplayedCredit()
+        {
+            kyouyouA = 0;
+            kyouyouAAll = 0;
+            kyouyouB = 0;
+            kyouyouBAll = 0;
+            kyouyouSum = 0;
+            kyouyouSumAll = 0;
+            specialA = 0;
+            specialAAll = 0;
+            specialB = 0;
+            specialBAll = 0;
+            specialC = 0;
+            specialCAll = 0;
+            specialSum = 0;
+            specialSumAll = 0;
+            specialFree = 0;
+            specialFreeAll = 0;
+            sum = 0;
+            sumAll = 0;
+        }
     }
 }
