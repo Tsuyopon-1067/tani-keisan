@@ -145,7 +145,7 @@
                             </ContextMenu>
                         </Button.ContextMenu>
                     </Button>
-                    <Button>
+                    <Button Click="AreaSelectorButton_Click">
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
                                 <TextBlock Text="天気予報設定" Padding="4" Background="Transparent"

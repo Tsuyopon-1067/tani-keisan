@@ -1,0 +1,21 @@
+﻿<Window x:Class="tani_keisan.AreaSelectorMain"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:tani_keisan"
+        mc:Ignorable="d"
+        Title="AreaSelectorMain" Height="450" Width="800">
+    <Grid>
+        <StackPanel>
+            <Button>北海道</Button>
+            <Button>東北</Button>
+            <Button>関東</Button>
+            <Button>中部</Button>
+            <Button>近畿</Button>
+            <Button>中国</Button>
+            <Button>四国</Button>
+            <Button>九州</Button>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -138,7 +138,6 @@ namespace tani_keisan
         /// <remarks> 受け取ったButtonのContextMenuのIsOpenプロパティをtrueにする </remarks>
         /// <param name="sender">object型だがButtonのみを受け取る前提</param>
         /// <param name="e">おまじない イベントハンドラとして必要</param>
-
         private void OpenContextMenu(object sender, RoutedEventArgs e)
         {
             Button btn = sender as Button;
@@ -191,16 +190,6 @@ namespace tani_keisan
         }
 
 
-        /// <summary>
-        /// 単位登録ボタンがクリックされた時に単位登録ウィンドウを表示するメソッド
-        /// </summary>
-        /// <param name="sender">おまじない イベントハンドラとして必要</param>
-        /// <param name="e">おまじない イベントハンドラとして必要</param>
-        private void CreditResisterButton_Click(object sender, RoutedEventArgs e)
-        {
-            CreditResister cr = new CreditResister();
-            cr.Show();
-        }
 
         /// <summary>
         /// メイン画面下部の合計単位情報を表示するメソッド
@@ -225,6 +214,27 @@ namespace tani_keisan
             specialSum.Text = f(dc.specialSum, dc.specialSumAll, "専門合計");
             creditFree.Text = f(dc.free, dc.freeAll, "自由科目");
             creditSum.Text = f(dc.sum, dc.sumAll, "合計");
+        }
+
+        /// <summary>
+        /// 単位登録ボタンがクリックされた時に単位登録ウィンドウを表示するメソッド
+        /// </summary>
+        /// <param name="sender">おまじない イベントハンドラとして必要</param>
+        /// <param name="e">おまじない イベントハンドラとして必要</param>
+        private void CreditResisterButton_Click(object sender, RoutedEventArgs e)
+        {
+            CreditResister cr = new CreditResister();
+            cr.Show();
+        }
+        /// <summary>
+        /// 天気予報設定ボタンがクリックされた時に天気予報設定ウィンドウを表示するメソッド
+        /// </summary>
+        /// <param name="sender">おまじない イベントハンドラとして必要</param>
+        /// <param name="e">おまじない イベントハンドラとして必要</param>
+        private void AreaSelectorButton_Click(object sender, RoutedEventArgs e)
+        {
+            AreaSelectorMain ar = new AreaSelectorMain();
+            ar.Show();
         }
     }
 }
