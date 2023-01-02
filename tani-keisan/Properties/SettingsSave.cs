@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -37,12 +38,25 @@ namespace tani_keisan.Properties
             //XmlSerializerオブジェクトを作成
             System.Xml.Serialization.XmlSerializer serializer =
                 new System.Xml.Serialization.XmlSerializer(typeof(DisplayedCredit));
-            //読み込むファイルを開く
-            System.IO.StreamReader sr = new System.IO.StreamReader(
-                dcFileName, new System.Text.UTF8Encoding(false));
-            //XMLファイルから読み込み、逆シリアル化する
-            DisplayedCredit obj = (DisplayedCredit)serializer.Deserialize(sr);
-            //ファイルを閉じる
+            System.IO.StreamReader sr;
+            DisplayedCredit obj;
+            try
+            {
+                //読み込むファイルを開く
+                sr = new System.IO.StreamReader(
+                    dcFileName, new System.Text.UTF8Encoding(false));
+                //XMLファイルから読み込み、逆シリアル化する
+                obj = (DisplayedCredit)serializer.Deserialize(sr);
+                //ファイルを閉じる
+            }
+            catch (FileNotFoundException e)
+            {
+                return new DisplayedCredit();
+            }
+            catch (DirectoryNotFoundException e)
+            {
+                return new DisplayedCredit();
+            }
             sr.Close();
             dc = obj;
 
