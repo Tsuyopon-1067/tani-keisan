@@ -86,11 +86,12 @@
             <local:CreditInput x:Name="all" Grid.Row="4" Grid.Column="1" Text="必要合計単位"  />
         </Grid>
         <!-- 登録（終了）ボタン -->
-        <Button 
+        <Button
             Content="登録完了"
             Grid.Row="3"
             Margin="12"
             Grid.ColumnSpan="2"
-            ToolTip="登録を完了してこのウィンドウを閉じます"/>
+            ToolTip="登録を完了してこのウィンドウを閉じます"
+            Click="QuitButton_Click"/>
     </Grid>
 </Window>

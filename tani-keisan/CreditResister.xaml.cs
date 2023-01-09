@@ -66,5 +66,11 @@ namespace tani_keisan
             var tag = ((Button)sender).Tag as Credit;
             credits.Remove(tag);
         }
+
+        private void QuitButton_Click(object sender, RoutedEventArgs e)
+        {
+            // todo: 登録の実装
+            this.Close();
+        }
     }
 }
