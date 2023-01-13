@@ -140,11 +140,13 @@ namespace tani_keisan
         /// <param name="e">おまじない イベントハンドラとして必要</param>
         private void OpenContextMenu(object sender, RoutedEventArgs e)
         {
-            Button btn = sender as Button;
-            ContextMenu contextMenu = btn.ContextMenu;
-            contextMenu.PlacementTarget = btn;
-            contextMenu.IsOpen = true;
-            e.Handled = true;
+            if (sender is Button btn)
+            {
+                ContextMenu contextMenu = btn.ContextMenu;
+                contextMenu.PlacementTarget = btn;
+                contextMenu.IsOpen = true;
+                e.Handled = true;
+            }
         }
 
         [DllImport("user32.dll")]
