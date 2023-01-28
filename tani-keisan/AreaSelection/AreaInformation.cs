@@ -353,5 +353,9 @@ namespace tani_keisan.AreaSelection
         }
         string name;
         string url;
+        public string ToString()
+        {
+            return name;
+        }
     }
 }
