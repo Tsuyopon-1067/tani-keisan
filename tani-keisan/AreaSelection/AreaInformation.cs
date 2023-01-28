@@ -251,6 +251,9 @@ namespace tani_keisan.AreaSelection
         public static List<TownInformation> shizuokaTown { get; } = new List<TownInformation>()
         {
             new TownInformation("静岡", "22/5010"),
+            new TownInformation("伊豆", "22/5020"),
+            new TownInformation("三島", "22/5030"),
+            new TownInformation("浜松", "22/5040."),
         };
         public static List<TownInformation> aichiTown { get; } = new List<TownInformation>()
         {
