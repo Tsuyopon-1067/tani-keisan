@@ -142,6 +142,10 @@ namespace tani_keisan.AreaSelection
             this.name = name;
             this.town = town;
         }
+        public string ToString()
+        {
+            return name;
+        }
         string name;
         List<TownInformation> town;
         // 以下で頑張って市町村情報を定義していく
