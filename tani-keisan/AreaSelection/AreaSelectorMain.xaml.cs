@@ -22,7 +22,7 @@ namespace tani_keisan
         public AreaSelectorMain()
         {
             InitializeComponent();
-            Area area = new Area(contentFrame);
+            Area area = new Area(this);
             contentFrame.Navigate(area);
         }
         

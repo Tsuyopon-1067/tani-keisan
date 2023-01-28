@@ -18,14 +18,15 @@ namespace tani_keisan
     /// <summary>
     /// Area.xaml の相互作用ロジック
     /// </summary>
+    // 地方を選択するページ
     public partial class Area : Page
     {
-        public Area(Frame f)
+        private AreaSelectorMain mainWindow;
+        public Area(AreaSelectorMain mainWindow)
         {
             InitializeComponent();
-            contentFrame = f;
+            this.mainWindow = mainWindow;
         }
-        private Frame contentFrame;
         // 地方名の列挙型
         enum Areas
         {
@@ -56,26 +57,11 @@ namespace tani_keisan
             if (sender is Button btn)
             {
                 string str = (string)btn.Content;
-                Areas tmp = areaNameToNum[str];
-                switch (tmp)
-                {
-                    case Areas.Hokkaido:
-                        break;
-                    case Areas.Tohoku:
-                        break;
-                    case Areas.Kanto:
-                        break;
-                    case Areas.Chubu:
-                        break;
-                    case Areas.Kinki:
-                        break;
-                    case Areas.Chugoku:
-                        break;
-                    case Areas.Shikoku:
-                        break;
-                    case Areas.Kyushu:
-                        break;
-                }
+                Areas area = areaNameToNum[str];
+                int n = (int)area;
+                AreaSelection.PrefecturePage p 
+                    = new AreaSelection.PrefecturePage(mainWindow, AreaSelection.AreaInformation.prefecture[n]);
+                mainWindow.contentFrame.Navigate(p);
             }
         }
     }
