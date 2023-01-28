@@ -161,36 +161,56 @@ namespace tani_keisan.AreaSelection
         public static List<TownInformation> hokkaidoTown { get; } = new List<TownInformation>()
         {
             new TownInformation("稚内", "1a/1100"),
-            new TownInformation("釧路", "1c/1900"),
-            new TownInformation("根室", "1c/1800"),
-            new TownInformation("根室", "1d/2300"),
-            new TownInformation("札幌", "1b/1400"),
             new TownInformation("旭川", "1a/1200"),
+            new TownInformation("留萌", "1a/1300"),
+            new TownInformation("札幌", "1b/1400"),
+            new TownInformation("岩見沢", "1b/1500"),
+            new TownInformation("倶知安", "1b/1600"),
+            new TownInformation("網走", "1c/1710"),
+            new TownInformation("北見", "1c/1720"),
+            new TownInformation("紋別", "1c/1730"),
+            new TownInformation("根室", "1c/1800"),
+            new TownInformation("釧路", "1c/1900"),
+            new TownInformation("帯広", "1c/2000"),
+            new TownInformation("室蘭", "1d/2100"),
+            new TownInformation("浦河", "1d/2200"),
             new TownInformation("函館", "1d/2300"),
+            new TownInformation("江差", "1d/2400"),
         };
         public static List<TownInformation> aomoriTown { get; } = new List<TownInformation>()
         {
             new TownInformation("青森", "2/3110"),
+            new TownInformation("むつ", "2/3120"),
+            new TownInformation("八戸", "2/3130"),
         };
         public static List<TownInformation> iwateTown { get; } = new List<TownInformation>()
         {
             new TownInformation("盛岡", "3/3310"),
+            new TownInformation("宮古", "3/3320"),
+            new TownInformation("大船渡", "3/3330"),
         };
         public static List<TownInformation> miyagiTown { get; } = new List<TownInformation>()
         {
             new TownInformation("仙台", "4/3410"),
+            new TownInformation("白石", "4/3420"),
         };
         public static List<TownInformation> akitaTown { get; } = new List<TownInformation>()
         {
             new TownInformation("秋田", "5/3210"),
+            new TownInformation("横手", "5/3220"),
         };
         public static List<TownInformation> yamagataTown { get; } = new List<TownInformation>()
         {
             new TownInformation("山形", "6/3510"),
+            new TownInformation("米沢", "6/3520"),
+            new TownInformation("酒田", "6/3530"),
+            new TownInformation("新庄", "6/3540"),
         };
         public static List<TownInformation> fukushimaTown { get; } = new List<TownInformation>()
         {
             new TownInformation("福島", "7/3610"),
+            new TownInformation("小名浜", "7/3620"),
+            new TownInformation("若松", "7/3630"),
         };
         public static List<TownInformation> ibarakiTown { get; } = new List<TownInformation>()
         {
