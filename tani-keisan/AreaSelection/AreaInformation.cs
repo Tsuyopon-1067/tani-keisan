@@ -147,7 +147,7 @@ namespace tani_keisan.AreaSelection
             return name;
         }
         string name;
-        List<TownInformation> town;
+        public List<TownInformation> town;
         // 以下で頑張って市町村情報を定義していく
         public static List<TownInformation> hokkaidoTown { get; } = new List<TownInformation>()
         {
