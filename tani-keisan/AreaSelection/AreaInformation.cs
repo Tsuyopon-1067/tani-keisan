@@ -8,12 +8,82 @@ namespace tani_keisan.AreaSelection
 {
     // 地方の情報
     // 都道府県を持つ
-    public class AreaInformations
-    {
-        AreaInformation hokkaido;
-        PrefectureInformation[] prefecture;
-    }
     public class AreaInformation
+    {
+        public static PrefectureInformation[][] prefecture = new PrefectureInformation[][]
+        {
+            new PrefectureInformation[] { AreaInformationElement.hokkaido},
+            new PrefectureInformation[]
+            {
+                AreaInformationElement.aomori,
+                AreaInformationElement.iwate,
+                AreaInformationElement.miyagi,
+                AreaInformationElement.akita,
+                AreaInformationElement.yamagata,
+                AreaInformationElement.fukushima,
+            },
+            new PrefectureInformation[]
+            {
+                AreaInformationElement.ibaraki,
+                AreaInformationElement.tochigi,
+                AreaInformationElement.gunma,
+                AreaInformationElement.saitama,
+                AreaInformationElement.chiba,
+                AreaInformationElement.tokyo,
+                AreaInformationElement.kanagawa,
+            },
+            new PrefectureInformation[]
+            {
+                AreaInformationElement.nigata,
+                AreaInformationElement.toyama,
+                AreaInformationElement.ishikawa,
+                AreaInformationElement.fukui,
+                AreaInformationElement.yamanashi,
+                AreaInformationElement.nagano,
+                AreaInformationElement.gifu,
+                AreaInformationElement.shizuoka,
+                AreaInformationElement.aichi,
+                AreaInformationElement.mie,
+            },
+            new PrefectureInformation[]
+            {
+                AreaInformationElement.mie,
+                AreaInformationElement.siga,
+                AreaInformationElement.kyoto,
+                AreaInformationElement.osaka,
+                AreaInformationElement.hyogo,
+                AreaInformationElement.nara,
+                AreaInformationElement.wakayama,
+            },
+            new PrefectureInformation[]
+            {
+                AreaInformationElement.tottori,
+                AreaInformationElement.shimane,
+                AreaInformationElement.okayama,
+                AreaInformationElement.hiroshima,
+                AreaInformationElement.yamaguchi,
+            },
+            new PrefectureInformation[]
+            {
+                AreaInformationElement.tokushima,
+                AreaInformationElement.kagawa,
+                AreaInformationElement.ehime,
+                AreaInformationElement.kochi,
+            },
+            new PrefectureInformation[]
+            {
+                AreaInformationElement.fukuoka,
+                AreaInformationElement.saga,
+                AreaInformationElement.nagasaki,
+                AreaInformationElement.kumamoto,
+                AreaInformationElement.ooita,
+                AreaInformationElement.miyazaki,
+                AreaInformationElement.kagoshima,
+                AreaInformationElement.okinawa,
+            },
+        };
+    }
+    public class AreaInformationElement
     {
         // 以下で都道府県情報を定義していく
         // 都道府県の名前，関連付ける市町村List
