@@ -62,6 +62,8 @@ namespace tani_keisan
                     case Areas.Hokkaido:
                         break;
                     case Areas.Tohoku:
+                        {
+                        }
                         break;
                     case Areas.Kanto:
                         break;
