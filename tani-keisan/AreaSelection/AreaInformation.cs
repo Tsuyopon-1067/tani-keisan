@@ -97,26 +97,37 @@ namespace tani_keisan.AreaSelection
         public static List<TownInformation> aomoriTown { get; } = new List<TownInformation>()
         {
             new TownInformation("青森", "2/3110"),
+            new TownInformation("むつ", "2/3120"),
+            new TownInformation("八戸", "2/3130"),
         };
         public static List<TownInformation> iwateTown { get; } = new List<TownInformation>()
         {
             new TownInformation("盛岡", "3/3310"),
+            new TownInformation("宮古", "3/3320"),
+            new TownInformation("大船渡", "3/3330"),
         };
         public static List<TownInformation> miyagiTown { get; } = new List<TownInformation>()
         {
             new TownInformation("仙台", "4/3410"),
+            new TownInformation("白石", "4/3420"),
         };
         public static List<TownInformation> akitaTown { get; } = new List<TownInformation>()
         {
             new TownInformation("秋田", "5/3210"),
+            new TownInformation("横手", "5/3220"),
         };
         public static List<TownInformation> yamagataTown { get; } = new List<TownInformation>()
         {
             new TownInformation("山形", "6/3510"),
+            new TownInformation("米沢", "6/3520"),
+            new TownInformation("酒田", "6/3530"),
+            new TownInformation("新庄", "6/3540"),
         };
         public static List<TownInformation> fukushimaTown { get; } = new List<TownInformation>()
         {
             new TownInformation("福島", "7/3610"),
+            new TownInformation("小名浜", "7/3620"),
+            new TownInformation("若松", "7/3630"),
         };
         public static List<TownInformation> ibarakiTown { get; } = new List<TownInformation>()
         {
