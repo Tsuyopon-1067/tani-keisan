@@ -8,6 +8,9 @@ namespace tani_keisan.AreaSelection
 {
     // 地方の情報
     // 都道府県を持つ
+    /// <summary>
+    /// 地方単位の情報を格納するクラス
+    /// </summary>
     public class AreaInformation
     {
         public static PrefectureInformation[][] prefecture = new PrefectureInformation[][]
@@ -83,6 +86,9 @@ namespace tani_keisan.AreaSelection
             },
         };
     }
+    /// <summary>
+    /// 都道府県単位の情報インスタンスを格納するクラス
+    /// </summary>
     public class AreaInformationElement
     {
         // 以下で都道府県情報を定義していく
@@ -135,6 +141,9 @@ namespace tani_keisan.AreaSelection
         public static PrefectureInformation kagoshima { get; } = new PrefectureInformation("鹿児島", PrefectureInformation.kagoshimaTown);
         public static PrefectureInformation okinawa { get; } = new PrefectureInformation("沖縄", PrefectureInformation.okinawaTown);
     }
+    /// <summary>
+    /// 都道府県単位の情報を格納するクラス
+    /// </summary>
     public class PrefectureInformation
     {
         public PrefectureInformation(string name, List<TownInformation> town)
@@ -344,6 +353,9 @@ namespace tani_keisan.AreaSelection
             new TownInformation("那覇", "47/9110"),
         };
     }
+    /// <summary>
+    /// 市町村単位の情報を格納するクラス
+    /// </summary>
     public class TownInformation
     {
         public TownInformation(string name, string url)

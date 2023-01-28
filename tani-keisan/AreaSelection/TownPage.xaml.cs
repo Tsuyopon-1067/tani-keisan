@@ -21,8 +21,8 @@ namespace tani_keisan.AreaSelection
     // 市町村を選択するページ
     public partial class TownPage : Page
     {
-        AreaSelectorMain mainWindow;
-        List<TownInformation> lst;
+        private AreaSelectorMain mainWindow;
+        private List<TownInformation> lst;
 
         public TownPage(AreaSelectorMain mainWindow, List<TownInformation> lst)
         {
@@ -32,18 +32,22 @@ namespace tani_keisan.AreaSelection
             SetupPage();
         }
         private const int ROW = 7;
+        /// <summary>
+        /// 市町村選択ボタンを配置するメソッド
+        /// </summary>
         private void SetupPage()
         {
-            int count = 0;
+            int count = 0; // 今いくつ目のボタンを配置しているかを記憶する
             foreach (var item in lst)
             {
                 int r = count % ROW;
                 int c = count / (ROW + 1);
-                Button btn = new Button();
+                Button btn = new();
                 btn.Content = string.Format(item.ToString());
                 Grid.SetRow(btn, r);
                 Grid.SetColumn(btn, c);
                 btn.Margin = new Thickness(10, 10, 10, 10);
+                // クリックイベントに市町村選択メソッドを登録する
                 btn.Click += (sender, e) =>
                 {
                     // 選択市町村情報をセット

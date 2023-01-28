@@ -32,23 +32,27 @@ namespace tani_keisan.AreaSelection
             SetupPage();
         }
         private const int ROW = 7;
+        /// <summary>
+        /// 都道府県選択ボタンを配置するメソッド
+        /// </summary>
         private void SetupPage()
         {
-            int count = 0;
+            int count = 0; // 今いくつ目のボタンを配置しているかを記憶する
             foreach (var item in lst)
             {
                 int r = count % ROW;
                 int c = count / (ROW + 1);
-                Button btn = new Button();
+                Button btn = new();
                 btn.Content = string.Format(item.ToString());
                 Grid.SetRow(btn, r);
                 Grid.SetColumn(btn, c);
                 btn.Margin = new Thickness(10, 10, 10, 10);
+                // クリックイベントに都道府県選択メソッドを登録する
                 btn.Click += (sender, e) =>
                 {
                     var town = item.town;
                     TownPage p
-                        = new TownPage(mainWindow, town);
+                        = new(mainWindow, town);
                     mainWindow.contentFrame.Navigate(p);
                 };
                 grid.Children.Add(btn);

@@ -52,6 +52,11 @@ namespace tani_keisan
                 { "kyushu", Areas.Kyushu }
             };
 
+        /// <summary>
+        /// 地方選択ボタンが押されたときに呼び出されるメソッド
+        /// </summary>
+        /// <param name="sender">object型だがButtonのみを受け取る前提</param>
+        /// <param name="e">おまじない イベントハンドラとして必要</param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             if (sender is Button btn)
