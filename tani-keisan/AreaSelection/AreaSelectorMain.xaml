@@ -5,17 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:tani_keisan"
         mc:Ignorable="d"
-        Title="AreaSelectorMain" Height="450" Width="800">
+        Title="AreaSelectorMain" Height="600" Width="800">
     <Grid>
-        <StackPanel>
-            <Button>北海道</Button>
-            <Button>東北</Button>
-            <Button>関東</Button>
-            <Button>中部</Button>
-            <Button>近畿</Button>
-            <Button>中国</Button>
-            <Button>四国</Button>
-            <Button>九州</Button>
-        </StackPanel>
+        <Frame x:Name="contentFrame"/>
     </Grid>
 </Window>

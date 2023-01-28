@@ -1,0 +1,71 @@
+﻿<Page x:Class="tani_keisan.Area"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:tani_keisan"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Area">
+
+    <Grid>
+        <Canvas>
+            <Button Content="hokkaido" Click="Button_Click" Cursor="Hand">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Path Fill="#FF74C1DE" StrokeThickness="1.58749998" Stroke="#FF000000" StrokeMiterLimit="4" StrokeLineJoin="Miter" StrokeStartLineCap="Flat" StrokeEndLineCap="Flat" Data="m 424.60253 125.37953 h 31.58607 v -15.19021 h 21.45919 l 38.09608 13.26129 26.04037 -28.451505 h 24.35257 v -36.6494 H 538.40864 L 468.48543 16.15467 h -22.18254 v 62.93088 l -21.70036 22.8456 z"/>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button Content="tohoku" Click="Button_Click" Cursor="Hand">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Path Fill="#FF72A5F1" StrokeThickness="1.58749998" Stroke="#FF000000" StrokeMiterLimit="4" StrokeLineJoin="Miter" StrokeStartLineCap="Flat" StrokeEndLineCap="Flat" Data="m 424.8437 146.35639 v 97.04868 h 12.65852 v 39.30169 l 48.34344 -3e-5 v -70.7671 l 9.09228 -5.24942 V 173.1202 L 482.7112 155.15717 v -17.11913 h -15.79301 v 17.11913 h -13.0202 v -8.80078 z"/>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button Content="chubu" Click="Button_Click" Cursor="Hand">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Path Fill="#FFA5DA62" StrokeThickness="1.58749998" Stroke="#FF000000" StrokeMiterLimit="4" StrokeLineJoin="Miter" StrokeStartLineCap="Flat" StrokeEndLineCap="Flat" Data="m 424.8437 243.40502 -44.3018 22.73562 h -29.15442 v -17.39035 h -15.85592 v 17.56085 l -13.98048 18.9248 v 21.82317 h -13.46901 v 9.71815 h 32.22332 v 55.06947 h 8.69518 v 7.16074 h 54.89895 l 9.37718 -9.37718 h 7.33121 v 9.03619 h 10.74097 l 1.3e-4 -45.69233 h -17.04935 v -50.26739 h 23.18713 v -39.30174 z"/>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button Content="kanto" Click="Button_Click" Cursor="Hand">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Path Fill="#FF5AB96A" StrokeThickness="1.58749998" Stroke="#FF000000" StrokeMiterLimit="4" StrokeLineJoin="Miter" StrokeStartLineCap="Flat" StrokeEndLineCap="Flat" Data="m 485.84566 282.70676 v 29.89342 l 3.6417 8.69516 v 37.93484 h -20.45925 v -10.99682 h -9.63287 v 14.57719 h -28.04636 v -29.92162 h -17.30497 v -50.18217 z"/>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button Content="kinki" Click="Button_Click" Cursor="Hand">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Path Fill="#FFE6D745" StrokeThickness="1.58749998" Stroke="#FF000000" StrokeMiterLimit="4" StrokeLineJoin="Miter" StrokeStartLineCap="Flat" StrokeEndLineCap="Flat" Data="m 308.08207 307.05911 h -55.03242 v 47.01749 h 34.84104 v 51.59852 h 52.4148 v -88.89786 h -32.22342 z"/>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button Content="chugoku" Click="Button_Click" Cursor="Hand">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Path Fill="#FFF3A140" StrokeThickness="1.58749998" Stroke="#FF000000" StrokeMiterLimit="4" StrokeLineJoin="Miter" StrokeStartLineCap="Flat" StrokeEndLineCap="Flat" Data="m 253.04965 307.05911 h -63.65423 l -23.62921 12.53813 v 34.47929 h 87.28344 z"/>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button Content="shikoku" Click="Button_Click" Cursor="Hand">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Path Fill="#FFF2624C" StrokeThickness="1.58749998" Stroke="#FF000000" StrokeMiterLimit="4" StrokeLineJoin="Miter" StrokeStartLineCap="Flat" StrokeEndLineCap="Flat" Data="m 179.99196 367.82004 v 47.98187 h 87.16288 v -47.98187 z"/>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button Content="kyushu" Click="Button_Click" Cursor="Hand">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Path Fill="#FFF185A3" StrokeThickness="1.58749998" Stroke="#FF000000" StrokeMiterLimit="4" StrokeLineJoin="Miter" StrokeStartLineCap="Flat" StrokeEndLineCap="Flat" Data="m 155.66073 346.95474 v 89.50909 l -19.86251 8.52469 v -8.69519 h -12.38211 v 6.69187 H 105.27985 V 374.83036 H 91.896096 v 13.55426 H 77.745121 v -41.42988 z"/>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </Canvas>
+    </Grid>
+</Page>

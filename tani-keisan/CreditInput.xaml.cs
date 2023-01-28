@@ -33,7 +33,6 @@ namespace tani_keisan
             int tmp = 0;
             int.TryParse(input.Text, out tmp);
             Number = tmp;
-            MessageBox.Show(Text);
         }
     }
 }
