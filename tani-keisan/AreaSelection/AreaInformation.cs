@@ -142,7 +142,7 @@ namespace tani_keisan.AreaSelection
             this.name = name;
             this.town = town;
         }
-        public string ToString()
+        public override string ToString()
         {
             return name;
         }
@@ -353,7 +353,7 @@ namespace tani_keisan.AreaSelection
         }
         string name;
         string url;
-        public string ToString()
+        public override string ToString()
         {
             return name;
         }
