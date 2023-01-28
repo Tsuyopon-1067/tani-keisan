@@ -352,7 +352,7 @@ namespace tani_keisan.AreaSelection
             this.url = url;
         }
         string name;
-        string url;
+        public string url { get; }
         public override string ToString()
         {
             return name;

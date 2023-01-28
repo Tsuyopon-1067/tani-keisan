@@ -19,9 +19,11 @@ namespace tani_keisan
     /// </summary>
     public partial class AreaSelectorMain : Window
     {
-        public AreaSelectorMain()
+        public WeatherDisplay weatherDisplay;
+        public AreaSelectorMain(WeatherDisplay weatherDisplay)
         {
             InitializeComponent();
+            this.weatherDisplay = weatherDisplay;
             Area area = new Area(this);
             contentFrame.Navigate(area);
         }

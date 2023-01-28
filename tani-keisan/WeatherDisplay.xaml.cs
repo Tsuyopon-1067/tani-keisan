@@ -22,9 +22,14 @@ namespace tani_keisan
         }
         public void SetWeather()
         {
+            string htmlUrl = Properties.Settings.Default.weatherUrl;
+            if (htmlUrl == "")
+            {
+                htmlUrl = "13/4410";
+            }
             // 取得対象の設定 
-            var htmlUrl = $"https://weather.yahoo.co.jp/weather/jp/13/4410.html";
-             htmlUrl = $"https://weather.yahoo.co.jp/weather/jp/22/5040.html";
+            htmlUrl = $"https://weather.yahoo.co.jp/weather/jp/" + htmlUrl + ".html";
+            // htmlUrl = $"https://weather.yahoo.co.jp/weather/jp/22/5040.html";
             var querySelectorArea = $"div.yjw_sub_md_lined > div > h2";
             var querySelectorWeather = $"#main > div.forecastCity > table > tbody > tr > td:nth-child(1) > div > p.pict";
             var querySelectorHighTemerature = $"#main > div.forecastCity > table > tbody > tr > td:nth-child(1) > div > ul > li.high > em";

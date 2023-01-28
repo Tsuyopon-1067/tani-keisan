@@ -44,7 +44,7 @@
                 </Viewbox>
                 <!-- 天気表示 -->
                 <Viewbox Grid.Row="1" Margin="8 0">
-                    <local:WeatherDisplay />
+                    <local:WeatherDisplay x:Name="weatherDisplay" />
                 </Viewbox>
                 <!-- 日付表示 -->
                 <Viewbox Grid.Column="1" Grid.Row="1" Margin="3">

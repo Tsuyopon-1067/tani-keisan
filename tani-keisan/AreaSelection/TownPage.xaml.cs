@@ -47,6 +47,10 @@ namespace tani_keisan.AreaSelection
                 btn.Click += (sender, e) =>
                 {
                     // 選択市町村情報をセット
+                    Properties.Settings.Default.weatherUrl = item.url;
+                    Properties.Settings.Default.Save();
+
+                    mainWindow.weatherDisplay.SetWeather();
                     mainWindow.Close();
                 };
                 grid.Children.Add(btn);

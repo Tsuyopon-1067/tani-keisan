@@ -235,7 +235,7 @@ namespace tani_keisan
         /// <param name="e">おまじない イベントハンドラとして必要</param>
         private void AreaSelectorButton_Click(object sender, RoutedEventArgs e)
         {
-            AreaSelectorMain ar = new AreaSelectorMain();
+            AreaSelectorMain ar = new AreaSelectorMain(weatherDisplay);
             ar.Show();
         }
     }
