@@ -48,7 +48,7 @@ namespace tani_keisan.AreaSelection
             new PrefectureInformation[]
             {
                 AreaInformationElement.mie,
-                AreaInformationElement.siga,
+                AreaInformationElement.shiga,
                 AreaInformationElement.kyoto,
                 AreaInformationElement.osaka,
                 AreaInformationElement.hyogo,
