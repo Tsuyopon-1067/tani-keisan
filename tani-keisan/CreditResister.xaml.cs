@@ -72,12 +72,23 @@ namespace tani_keisan
             credits.Remove(tag);
         }
 
+        /// <summary>
+        /// 終了ボタンが押されたときに単位情報を保存して画面を閉じる
+        /// </summary>
         private void QuitButton_Click(object sender, RoutedEventArgs e)
         {
             // todo: 登録の実装
             SaveDisplayedCredit(); // このクラス内のメソッド この中でSettingsSaveが呼ばれてる
             Properties.SettingsSave.SaveCreditList(credits);
 
+            SetDisplayedCreditToMainWindow();
+            this.Close();
+        }
+        /// <summary>
+        /// 取得したDisplayedCreditインスタンスの情報をMainWindowに反映する
+        /// </summary>
+        public void SetDisplayedCreditToMainWindow()
+        {
             displayedCredit.kyouyouA = 0;
             displayedCredit.kyouyouB = 0;
             displayedCredit.gakusaiA = 0;
@@ -91,7 +102,7 @@ namespace tani_keisan
             // ここで各カテゴリの合計単位数を計算する
             foreach (var credit in credits)
             {
-                switch(credit.category)
+                switch (credit.category)
                 {
                     case SuubjectCategoryType.kyouyouA:
                         displayedCredit.kyouyouA += credit.credit;
@@ -119,13 +130,12 @@ namespace tani_keisan
                         break;
                 }
             }
-            displayedCredit.kyouyouSum 
-                = displayedCredit.kyouyouA +displayedCredit.kyouyouB + displayedCredit.gakusaiA + kyouyouOther;
+            displayedCredit.kyouyouSum
+                = displayedCredit.kyouyouA + displayedCredit.kyouyouB + displayedCredit.gakusaiA + kyouyouOther;
             displayedCredit.specialSum
                 = displayedCredit.specialA + displayedCredit.specialB + displayedCredit.specialC;
             mainWindow.dc = displayedCredit; // 表示する単位情報
             mainWindow.SetCreditInfo();
-            this.Close();
         }
         /// <summary>
         /// DisplayedCreditクラスのインスタンスから対応するテキストボックスに値を入れるメソッド

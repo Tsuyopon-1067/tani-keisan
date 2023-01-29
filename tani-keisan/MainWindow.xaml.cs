@@ -33,7 +33,8 @@ namespace tani_keisan
             moveHandle.MouseLeftButtonDown += (o, e) => DragMove(); // ウィンドウ移動ハンドルの追加
 
             dc = SettingsSave.ReadDisplayedCredit();
-            SetCreditInfo();
+            CreditResister cr = new(this);
+            cr.SetDisplayedCreditToMainWindow();
         }
         // solution : https://qiita.com/Kosen-amai/items/88b3d987b41f46ebea4b
         /// <summary>
