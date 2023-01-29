@@ -20,7 +20,19 @@ namespace tani_keisan
         /// <summary>
         /// TextBox（右側）を変更するメソッド
         /// </summary>
-        public int Number { get; set; } = 0;
+        public int Number
+        {
+            get
+            {
+                int tmp = 0;
+                int.TryParse(input.Text, out tmp);
+                return tmp;
+            }
+            set
+            {
+                input.Text = value.ToString();
+            }
+        }
         public CreditInput()
         {
             InitializeComponent();

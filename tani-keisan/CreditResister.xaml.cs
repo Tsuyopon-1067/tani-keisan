@@ -23,12 +23,15 @@ namespace tani_keisan
     public partial class CreditResister : Window
     {
         private ObservableCollection<Credit> credits;
+        private DisplayedCredit displayedCredit;
         public CreditResister()
         {
             InitializeComponent();
-            credits = new ObservableCollection<Credit>();
-            subjectCategoryColumn.ItemsSource = subjectCategory;
+            credits = Properties.SettingsSave.ReadCreditList();
             dataGrid.ItemsSource = credits;
+            displayedCredit = Properties.SettingsSave.ReadDisplayedCredit();
+            subjectCategoryColumn.ItemsSource = subjectCategory; // コンボボックス選択肢の登録
+            SetDisplayedCredit();
         }
 
         /// <summary>
@@ -70,7 +73,42 @@ namespace tani_keisan
         private void QuitButton_Click(object sender, RoutedEventArgs e)
         {
             // todo: 登録の実装
+            SaveDisplayedCredit(); // このクラス内のメソッド この中でSettingsSaveが呼ばれてる
+            Properties.SettingsSave.SaveCreditList(credits);
             this.Close();
+        }
+        /// <summary>
+        /// DisplayedCreditクラスのインスタンスから対応するテキストボックスに値を入れるメソッド
+        /// </summary>
+        private void SetDisplayedCredit()
+        {
+            kyouyouA.Number = displayedCredit.kyouyouAAll;
+            kyouyouB.Number = displayedCredit.kyouyouBAll;
+            gakusaiA.Number = displayedCredit.gakusaiAAll;
+            kyouyouAll.Number = displayedCredit.kyouyouSumAll;
+            senmonA.Number = displayedCredit.specialAAll;
+            senmonB.Number = displayedCredit.specialBAll;
+            senmonC.Number = displayedCredit.specialCAll;
+            senmonAll.Number = displayedCredit.specialSumAll;
+            free.Number = displayedCredit.freeAll;
+            all.Number = displayedCredit.sumAll;
+        }
+        /// <summary>
+        /// DisplayedCreditクラスのインスタンスに対応するテキストボックスの値を入れるメソッド
+        /// </summary>
+        private void SaveDisplayedCredit()
+        {
+            displayedCredit.kyouyouAAll = kyouyouA.Number;
+            displayedCredit.kyouyouBAll = kyouyouB.Number;
+            displayedCredit.gakusaiAAll = gakusaiA.Number;
+            displayedCredit.kyouyouSumAll = kyouyouAll.Number;
+            displayedCredit.specialAAll = senmonA.Number;
+            displayedCredit.specialBAll = senmonB.Number;
+            displayedCredit.specialCAll = senmonC.Number;
+            displayedCredit.specialSumAll = senmonAll.Number;
+            displayedCredit.freeAll = free.Number;
+            displayedCredit.sumAll = all.Number;
+            Properties.SettingsSave.SaveDisplayedCredit(displayedCredit);
         }
     }
 }
