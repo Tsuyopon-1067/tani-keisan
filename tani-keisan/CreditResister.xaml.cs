@@ -130,10 +130,13 @@ namespace tani_keisan
                         break;
                 }
             }
+            // それぞれの合計単位を求める
             displayedCredit.kyouyouSum
                 = displayedCredit.kyouyouA + displayedCredit.kyouyouB + displayedCredit.gakusaiA + kyouyouOther;
             displayedCredit.specialSum
                 = displayedCredit.specialA + displayedCredit.specialB + displayedCredit.specialC;
+            displayedCredit.sum = displayedCredit.kyouyouSum + displayedCredit.specialSum + displayedCredit.free;
+
             mainWindow.dc = displayedCredit; // 表示する単位情報
             mainWindow.SetCreditInfo();
         }
