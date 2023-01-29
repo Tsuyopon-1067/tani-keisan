@@ -99,6 +99,9 @@ namespace tani_keisan
             //displayedCredit.specialSum = 0; // 下で代入するから不要
             displayedCredit.free = 0;
             int kyouyouOther = 0; // DisplayCredit型にないから用意する
+            int kyouyouOtherAll
+                = displayedCredit.kyouyouSumAll
+                - (displayedCredit.kyouyouAAll + displayedCredit.kyouyouBAll + displayedCredit.gakusaiAAll);
             // ここで各カテゴリの合計単位数を計算する
             foreach (var credit in credits)
             {
@@ -130,6 +133,17 @@ namespace tani_keisan
                         break;
                 }
             }
+            // 自由単位を求める
+            displayedCredit.free = 0;
+            int f(int a, int b) => Math.Max(0, a-b); // ラムダ式使ったッピ！！！！！ はみ出た分を求める
+            displayedCredit.free
+                = f(displayedCredit.kyouyouA, displayedCredit.kyouyouAAll)
+                + f(displayedCredit.kyouyouB, displayedCredit.kyouyouBAll)
+                + f(displayedCredit.gakusaiA, displayedCredit.gakusaiAAll)
+                + f(kyouyouOther, kyouyouOtherAll)
+                + f(displayedCredit.specialA, displayedCredit.specialAAll)
+                + f(displayedCredit.specialB, displayedCredit.specialBAll)
+                + f(displayedCredit.specialC, displayedCredit.specialCAll);
             // それぞれの合計単位を求める
             displayedCredit.kyouyouSum
                 = displayedCredit.kyouyouA + displayedCredit.kyouyouB + displayedCredit.gakusaiA + kyouyouOther;
