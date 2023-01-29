@@ -339,22 +339,30 @@ namespace tani_keisan.AreaSelection
         public static List<TownInformation> tottoriTown { get; } = new List<TownInformation>()
         {
             new TownInformation("鳥取", "31/6910"),
+            new TownInformation("米子", "31/6920"),
         };
         public static List<TownInformation> shimaneTown { get; } = new List<TownInformation>()
         {
             new TownInformation("松江", "32/6810"),
+            new TownInformation("浜田", "32/6820"),
+            new TownInformation("西郷", "32/6830"),
         };
         public static List<TownInformation> okayamaTown { get; } = new List<TownInformation>()
         {
             new TownInformation("岡山", "33/6610"),
+            new TownInformation("津山", "33/6620"),
         };
         public static List<TownInformation> hiroshimaTown { get; } = new List<TownInformation>()
         {
             new TownInformation("広島", "34/6710"),
+            new TownInformation("庄原", "34/6720"),
         };
         public static List<TownInformation> yamaguchiTown { get; } = new List<TownInformation>()
         {
+            new TownInformation("下関", "35/8110"),
             new TownInformation("山口", "35/8120"),
+            new TownInformation("柳井", "35/8130"),
+            new TownInformation("萩", "35/8140"),
         };
         public static List<TownInformation> tokushimaTown { get; } = new List<TownInformation>()
         {
