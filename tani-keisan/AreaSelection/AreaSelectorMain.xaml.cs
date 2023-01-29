@@ -27,6 +27,5 @@ namespace tani_keisan
             Area area = new Area(this);
             contentFrame.Navigate(area);
         }
-        
     }
 }

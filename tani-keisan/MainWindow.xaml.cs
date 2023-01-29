@@ -19,7 +19,7 @@ namespace tani_keisan
         /// 時刻表示用タイマー
         /// </summary>
         private DispatcherTimer timer; // 時計更新に使う
-        private DisplayedCredit dc; // 画面下部に表示する合計単位情報
+        public DisplayedCredit dc; // 画面下部に表示する合計単位情報
 
         public MainWindow()
         {
@@ -192,11 +192,11 @@ namespace tani_keisan
         }
 
 
-
         /// <summary>
         /// メイン画面下部の合計単位情報を表示するメソッド
+        /// CrediResiterから呼ばれるからpublic
         /// </summary>
-        private void SetCreditInfo()
+        public void SetCreditInfo()
         {
             /// <summary>
             /// 画面に表示するフォーマットを作るローカル関数
@@ -225,7 +225,7 @@ namespace tani_keisan
         /// <param name="e">おまじない イベントハンドラとして必要</param>
         private void CreditResisterButton_Click(object sender, RoutedEventArgs e)
         {
-            CreditResister cr = new CreditResister();
+            CreditResister cr = new CreditResister(this);
             cr.Show();
         }
         /// <summary>

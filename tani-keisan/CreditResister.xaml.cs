@@ -23,12 +23,17 @@ namespace tani_keisan
     public partial class CreditResister : Window
     {
         private ObservableCollection<Credit> credits;
-        public CreditResister()
+        private DisplayedCredit displayedCredit;
+        private MainWindow mainWindow;
+        public CreditResister(MainWindow mainWindow)
         {
             InitializeComponent();
-            credits = new ObservableCollection<Credit>();
-            subjectCategoryColumn.ItemsSource = subjectCategory;
+            credits = Properties.SettingsSave.ReadCreditList();
             dataGrid.ItemsSource = credits;
+            displayedCredit = Properties.SettingsSave.ReadDisplayedCredit();
+            subjectCategoryColumn.ItemsSource = subjectCategory; // コンボボックス選択肢の登録
+            SetDisplayedCredit();
+            this.mainWindow = mainWindow;
         }
 
         /// <summary>
@@ -70,7 +75,90 @@ namespace tani_keisan
         private void QuitButton_Click(object sender, RoutedEventArgs e)
         {
             // todo: 登録の実装
+            SaveDisplayedCredit(); // このクラス内のメソッド この中でSettingsSaveが呼ばれてる
+            Properties.SettingsSave.SaveCreditList(credits);
+
+            displayedCredit.kyouyouA = 0;
+            displayedCredit.kyouyouB = 0;
+            displayedCredit.gakusaiA = 0;
+            //displayedCredit.kyouyouSum = 0; // 下で代入するから不要
+            displayedCredit.specialA = 0;
+            displayedCredit.specialB = 0;
+            displayedCredit.specialC = 0;
+            //displayedCredit.specialSum = 0; // 下で代入するから不要
+            displayedCredit.free = 0;
+            int kyouyouOther = 0; // DisplayCredit型にないから用意する
+            // ここで各カテゴリの合計単位数を計算する
+            foreach (var credit in credits)
+            {
+                switch(credit.category)
+                {
+                    case SuubjectCategoryType.kyouyouA:
+                        displayedCredit.kyouyouA += credit.credit;
+                        break;
+                    case SuubjectCategoryType.kyouyouB:
+                        displayedCredit.kyouyouB += credit.credit;
+                        break;
+                    case SuubjectCategoryType.gakusaiA:
+                        displayedCredit.gakusaiA += credit.credit;
+                        break;
+                    case SuubjectCategoryType.kyouyouOther:
+                        kyouyouOther += credit.credit;
+                        break;
+                    case SuubjectCategoryType.senmonA:
+                        displayedCredit.specialA += credit.credit;
+                        break;
+                    case SuubjectCategoryType.senmonB:
+                        displayedCredit.specialB += credit.credit;
+                        break;
+                    case SuubjectCategoryType.senmonC:
+                        displayedCredit.specialC += credit.credit;
+                        break;
+                    case SuubjectCategoryType.free:
+                        displayedCredit.specialC += credit.credit;
+                        break;
+                }
+            }
+            displayedCredit.kyouyouSum 
+                = displayedCredit.kyouyouA +displayedCredit.kyouyouB + displayedCredit.gakusaiA + kyouyouOther;
+            displayedCredit.specialSum
+                = displayedCredit.specialA + displayedCredit.specialB + displayedCredit.specialC;
+            mainWindow.dc = displayedCredit; // 表示する単位情報
+            mainWindow.SetCreditInfo();
             this.Close();
+        }
+        /// <summary>
+        /// DisplayedCreditクラスのインスタンスから対応するテキストボックスに値を入れるメソッド
+        /// </summary>
+        private void SetDisplayedCredit()
+        {
+            kyouyouA.Number = displayedCredit.kyouyouAAll;
+            kyouyouB.Number = displayedCredit.kyouyouBAll;
+            gakusaiA.Number = displayedCredit.gakusaiAAll;
+            kyouyouAll.Number = displayedCredit.kyouyouSumAll;
+            senmonA.Number = displayedCredit.specialAAll;
+            senmonB.Number = displayedCredit.specialBAll;
+            senmonC.Number = displayedCredit.specialCAll;
+            senmonAll.Number = displayedCredit.specialSumAll;
+            free.Number = displayedCredit.freeAll;
+            all.Number = displayedCredit.sumAll;
+        }
+        /// <summary>
+        /// DisplayedCreditクラスのインスタンスに対応するテキストボックスの値を入れるメソッド
+        /// </summary>
+        private void SaveDisplayedCredit()
+        {
+            displayedCredit.kyouyouAAll = kyouyouA.Number;
+            displayedCredit.kyouyouBAll = kyouyouB.Number;
+            displayedCredit.gakusaiAAll = gakusaiA.Number;
+            displayedCredit.kyouyouSumAll = kyouyouAll.Number;
+            displayedCredit.specialAAll = senmonA.Number;
+            displayedCredit.specialBAll = senmonB.Number;
+            displayedCredit.specialCAll = senmonC.Number;
+            displayedCredit.specialSumAll = senmonAll.Number;
+            displayedCredit.freeAll = free.Number;
+            displayedCredit.sumAll = all.Number;
+            Properties.SettingsSave.SaveDisplayedCredit(displayedCredit);
         }
     }
 }
