@@ -24,7 +24,8 @@ namespace tani_keisan
     {
         private ObservableCollection<Credit> credits;
         private DisplayedCredit displayedCredit;
-        public CreditResister()
+        private MainWindow mainWindow;
+        public CreditResister(MainWindow mainWindow)
         {
             InitializeComponent();
             credits = Properties.SettingsSave.ReadCreditList();
@@ -32,6 +33,7 @@ namespace tani_keisan
             displayedCredit = Properties.SettingsSave.ReadDisplayedCredit();
             subjectCategoryColumn.ItemsSource = subjectCategory; // コンボボックス選択肢の登録
             SetDisplayedCredit();
+            this.mainWindow = mainWindow;
         }
 
         /// <summary>
@@ -75,6 +77,54 @@ namespace tani_keisan
             // todo: 登録の実装
             SaveDisplayedCredit(); // このクラス内のメソッド この中でSettingsSaveが呼ばれてる
             Properties.SettingsSave.SaveCreditList(credits);
+
+            displayedCredit.kyouyouA = 0;
+            displayedCredit.kyouyouB = 0;
+            displayedCredit.gakusaiA = 0;
+            //displayedCredit.kyouyouSum = 0; // 下で代入するから不要
+            displayedCredit.specialA = 0;
+            displayedCredit.specialB = 0;
+            displayedCredit.specialC = 0;
+            //displayedCredit.specialSum = 0; // 下で代入するから不要
+            displayedCredit.free = 0;
+            int kyouyouOther = 0; // DisplayCredit型にないから用意する
+            // ここで各カテゴリの合計単位数を計算する
+            foreach (var credit in credits)
+            {
+                switch(credit.category)
+                {
+                    case SuubjectCategoryType.kyouyouA:
+                        displayedCredit.kyouyouA += credit.credit;
+                        break;
+                    case SuubjectCategoryType.kyouyouB:
+                        displayedCredit.kyouyouB += credit.credit;
+                        break;
+                    case SuubjectCategoryType.gakusaiA:
+                        displayedCredit.gakusaiA += credit.credit;
+                        break;
+                    case SuubjectCategoryType.kyouyouOther:
+                        kyouyouOther += credit.credit;
+                        break;
+                    case SuubjectCategoryType.senmonA:
+                        displayedCredit.specialA += credit.credit;
+                        break;
+                    case SuubjectCategoryType.senmonB:
+                        displayedCredit.specialB += credit.credit;
+                        break;
+                    case SuubjectCategoryType.senmonC:
+                        displayedCredit.specialC += credit.credit;
+                        break;
+                    case SuubjectCategoryType.free:
+                        displayedCredit.specialC += credit.credit;
+                        break;
+                }
+            }
+            displayedCredit.kyouyouSum 
+                = displayedCredit.kyouyouA +displayedCredit.kyouyouB + displayedCredit.gakusaiA + kyouyouOther;
+            displayedCredit.specialSum
+                = displayedCredit.specialA + displayedCredit.specialB + displayedCredit.specialC;
+            mainWindow.dc = displayedCredit; // 表示する単位情報
+            mainWindow.SetCreditInfo();
             this.Close();
         }
         /// <summary>

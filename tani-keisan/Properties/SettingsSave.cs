@@ -75,12 +75,13 @@ namespace tani_keisan.Properties
         private static string clFileName = @"./settings/CreditList.xml";
         static ObservableCollection<Credit> cl;
 
-        public static void SaveCreditList(ObservableCollection<Credit> cl)
+        public static void SaveCreditList(ObservableCollection<Credit> credits)
         {
-            if (cl == null)
+            if (credits == null)
             {
-                cl = new ObservableCollection<Credit>();
+                credits = new ObservableCollection<Credit>();
             }
+            cl = credits;
 
             //XmlSerializerオブジェクトを作成
             //オブジェクトの型を指定する
@@ -88,9 +89,9 @@ namespace tani_keisan.Properties
                 new System.Xml.Serialization.XmlSerializer(typeof(ObservableCollection<Credit>));
             //書き込むファイルを開く（UTF-8 BOM無し）
             System.IO.StreamWriter sw = new System.IO.StreamWriter(
-                dcFileName, false, new System.Text.UTF8Encoding(false));
+                clFileName, false, new System.Text.UTF8Encoding(false));
             //シリアル化し、XMLファイルに保存する
-            serializer.Serialize(sw, dc);
+            serializer.Serialize(sw, cl);
             //ファイルを閉じる
             sw.Close();
         }
