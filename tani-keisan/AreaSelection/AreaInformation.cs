@@ -367,6 +367,7 @@ namespace tani_keisan.AreaSelection
         public static List<TownInformation> tokushimaTown { get; } = new List<TownInformation>()
         {
             new TownInformation("徳島", "36/7110"),
+            new TownInformation("日和佐", "36/7120"),
         };
         public static List<TownInformation> kagawaTown { get; } = new List<TownInformation>()
         {
@@ -375,10 +376,14 @@ namespace tani_keisan.AreaSelection
         public static List<TownInformation> ehimeTown { get; } = new List<TownInformation>()
         {
             new TownInformation("松山", "38/7310"),
+            new TownInformation("新居浜", "38/7320"),
+            new TownInformation("宇和島", "38/7330"),
         };
         public static List<TownInformation> kochiTown { get; } = new List<TownInformation>()
         {
             new TownInformation("高知", "39/7410"),
+            new TownInformation("室戸岬", "39/7420"),
+            new TownInformation("清水", "39/7430"),
         };
         public static List<TownInformation> fukuokaTown { get; } = new List<TownInformation>()
         {
