@@ -107,6 +107,7 @@ namespace tani_keisan
         {
             timer.Stop();
             this.Close();
+            Environment.Exit(0);
         }
 
         SolidColorBrush bottomBarColor = new SolidColorBrush(Color.FromArgb(0x00, 0xFF, 0x00, 0x00)); // 通常時の色(透明にしておく)
