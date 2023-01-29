@@ -261,14 +261,17 @@ namespace tani_keisan.AreaSelection
         public static List<TownInformation> toyamaTown { get; } = new List<TownInformation>()
         {
             new TownInformation("富山", "16/5510"),
+            new TownInformation("伏木", "16/5520"),
         };
         public static List<TownInformation> ishikawaTown { get; } = new List<TownInformation>()
         {
             new TownInformation("金沢", "17/5610"),
+            new TownInformation("輪島", "17/5620"),
         };
         public static List<TownInformation> fukuiTown { get; } = new List<TownInformation>()
         {
             new TownInformation("福井", "18/5710"),
+            new TownInformation("敦賀", "18/5720")
         };
         public static List<TownInformation> yamanashiTown { get; } = new List<TownInformation>()
         {
@@ -284,29 +287,35 @@ namespace tani_keisan.AreaSelection
         public static List<TownInformation> gifuTown { get; } = new List<TownInformation>()
         {
             new TownInformation("岐阜", "21/5210"),
+            new TownInformation("高山", "21/5220"),
         };
         public static List<TownInformation> shizuokaTown { get; } = new List<TownInformation>()
         {
             new TownInformation("静岡", "22/5010"),
-            new TownInformation("伊豆", "22/5020"),
+            new TownInformation("綱代", "22/5020"),
             new TownInformation("三島", "22/5030"),
             new TownInformation("浜松", "22/5040."),
         };
         public static List<TownInformation> aichiTown { get; } = new List<TownInformation>()
         {
             new TownInformation("名古屋", "23/5110"),
+            new TownInformation("豊橋", "23/5120"),
         };
         public static List<TownInformation> mieTown { get; } = new List<TownInformation>()
         {
-            new TownInformation("三重", "24/5310"),
+            new TownInformation("津", "24/5310"),
+            new TownInformation("尾鷲", "24/5320"),
         };
         public static List<TownInformation> shigaTown { get; } = new List<TownInformation>()
         {
             new TownInformation("大津", "25/6010"),
+            new TownInformation("彦根", "25/6020"),
+
         };
         public static List<TownInformation> kyotoTown { get; } = new List<TownInformation>()
         {
             new TownInformation("京都", "26/6110"),
+            new TownInformation("舞鶴", "26/6220"),
         };
         public static List<TownInformation> osakaTown { get; } = new List<TownInformation>()
         {
@@ -315,14 +324,17 @@ namespace tani_keisan.AreaSelection
         public static List<TownInformation> hyogoTown { get; } = new List<TownInformation>()
         {
             new TownInformation("神戸", "28/6310"),
+            new TownInformation("豊岡", "28/6320"),
         };
         public static List<TownInformation> naraTown { get; } = new List<TownInformation>()
         {
             new TownInformation("奈良", "29/6410"),
+            new TownInformation("風屋", "29/6420"),
         };
         public static List<TownInformation> wakayamaTown { get; } = new List<TownInformation>()
         {
             new TownInformation("和歌山", "30/6510"),
+            new TownInformation("潮岬", "30/6520"),
         };
         public static List<TownInformation> tottoriTown { get; } = new List<TownInformation>()
         {
