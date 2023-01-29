@@ -48,7 +48,7 @@ namespace tani_keisan
             string hlowTemperature = elementLowTemperature != null ? elementLowTemperature.TextContent : "未取得";
 
             area = Regex.Match(area, @"（.*?）").ToString(); // 正規表現使う機会あるやん！ 「西部（浜松）」なら「（浜松）」を取り出す
-            area = area.Substring(1, area.Length - 2); // 「（浜松）」->「浜松」
+            area = area.Substring(Math.Min(area.Length, 1), Math.Max(area.Length - 2, 0)); // 「（浜松）」->「浜松」
             weather = weather.Replace("\n", ""); // [スペースいっぱい]晴れ\n みたいになってるので修正
             weather = weather.Replace(" ", "");
             this.areaName.Text = area;
