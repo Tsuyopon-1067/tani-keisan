@@ -294,52 +294,17 @@ namespace tani_keisan.AreaSelection
             new TownInformation("静岡", "22/5010"),
             new TownInformation("綱代", "22/5020"),
             new TownInformation("三島", "22/5030"),
-            new TownInformation("浜松", "22/5040"),
-            new TownInformation("島田", "22/5010/22209"),
-            new TownInformation("藤枝", "22/5010/22214"),
-            new TownInformation("熱海", "22/5020/22205"),
-            new TownInformation("沼津", "22/5030/22203"),
-            new TownInformation("富士宮", "22/5030/22207"),
-            new TownInformation("富士", "22/5030/22210"),
-            new TownInformation("焼津", "22/5040/22212"),
-            new TownInformation("掛川", "22/5040/22213"),
-            new TownInformation("袋井", "22/5040/22216"),
-            new TownInformation("磐田", "22/5040/22211"),
-            new TownInformation("湖西", "22/5040/22221"),
+            new TownInformation("浜松", "22/5040."),
         };
         public static List<TownInformation> aichiTown { get; } = new List<TownInformation>()
         {
             new TownInformation("名古屋", "23/5110"),
             new TownInformation("豊橋", "23/5120"),
-            new TownInformation("岡崎", "23/5110/23202"),
-            new TownInformation("一宮", "23/5110/23203"),
-            new TownInformation("半田", "23/5110/23205"),
-            new TownInformation("知多", "23/5110/23224"),
-            new TownInformation("武豊", "23/5110/23447"),
-            new TownInformation("豊川", "23/5120/23207"),
-            new TownInformation("刈谷", "23/5110/23210"),
-            new TownInformation("豊田", "23/5110/23211"),
-            new TownInformation("安城", "23/5110/23212"),
-            new TownInformation("西尾", "23/5110/23213"),
-            new TownInformation("常滑", "23/5110/23216"),
-            new TownInformation("大府", "23/5110/23223"),
-            new TownInformation("弥富", "23/5110/23235"),
-            new TownInformation("新城", "23/5120/23221"),
         };
         public static List<TownInformation> mieTown { get; } = new List<TownInformation>()
         {
             new TownInformation("津", "24/5310"),
             new TownInformation("尾鷲", "24/5320"),
-            new TownInformation("四日市", "24/5310/24202"),
-            new TownInformation("松阪", "24/5310/24204"),
-            new TownInformation("鈴鹿", "24/5310/24207"),
-            new TownInformation("亀山", "24/5310/24210"),
-            new TownInformation("桑名", "24/5310/24205"),
-            new TownInformation("多気", "24/5310/24441"),
-            new TownInformation("伊勢", "24/5320/24203"),
-            new TownInformation("志摩", "24/5320/24215"),
-            new TownInformation("熊野", "24/5320/24543"),
-            new TownInformation("紀北", "24/5320/24212"),
         };
         public static List<TownInformation> shigaTown { get; } = new List<TownInformation>()
         {
