@@ -388,34 +388,59 @@ namespace tani_keisan.AreaSelection
         public static List<TownInformation> fukuokaTown { get; } = new List<TownInformation>()
         {
             new TownInformation("福岡", "40/8210"),
+            new TownInformation("八幡", "40/8220"),
+            new TownInformation("飯塚", "40/8230"),
+            new TownInformation("久留米", "40/8240"),
         };
         public static List<TownInformation> sagaTown { get; } = new List<TownInformation>()
         {
             new TownInformation("佐賀", "41/8510"),
+            new TownInformation("伊万里", "41/8520"),
         };
         public static List<TownInformation> nagasakiTown { get; } = new List<TownInformation>()
         {
             new TownInformation("長崎", "42/8410"),
+            new TownInformation("佐世保", "42/8420"),
+            new TownInformation("厳原", "42/8430"),
+            new TownInformation("福江", "42/8440"),
         };
         public static List<TownInformation> kumamotoTown { get; } = new List<TownInformation>()
         {
             new TownInformation("熊本", "43/8610"),
+            new TownInformation("阿蘇乙姫", "43/8630"),
+            new TownInformation("牛深", "43/8630"),
+            new TownInformation("人吉", "43/8640"),
         };
         public static List<TownInformation> ooitaTown { get; } = new List<TownInformation>()
         {
             new TownInformation("大分", "44/8310"),
+            new TownInformation("中津", "44/8320"),
+            new TownInformation("日田", "44/8330"),
+            new TownInformation("佐伯", "44/8340"),
         };
         public static List<TownInformation> miyazakiTown { get; } = new List<TownInformation>()
         {
             new TownInformation("宮崎", "45/8710"),
+            new TownInformation("延岡", "45/8720"),
+            new TownInformation("都城", "45/8730"),
+            new TownInformation("高千穂", "45/8740"),
         };
         public static List<TownInformation> kagoshimaTown { get; } = new List<TownInformation>()
         {
             new TownInformation("鹿児島", "46/8810"),
+            new TownInformation("鹿屋", "46/8820"),
+            new TownInformation("種子島", "46/8830"),
+            new TownInformation("名瀬", "46/1000"),
         };
         public static List<TownInformation> okinawaTown { get; } = new List<TownInformation>()
         {
             new TownInformation("那覇", "47/9110"),
+            new TownInformation("名護", "47/9120"),
+            new TownInformation("久米島", "47/9130"),
+            new TownInformation("南大東", "47/9200"),
+            new TownInformation("宮古島", "47/9300"),
+            new TownInformation("石垣島", "47/9410"),
+            new TownInformation("与那国島", "47/9420"),
         };
     }
     /// <summary>
