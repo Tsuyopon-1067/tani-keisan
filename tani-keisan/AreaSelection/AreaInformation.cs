@@ -442,7 +442,7 @@ namespace tani_keisan.AreaSelection
         public static List<TownInformation> kumamotoTown { get; } = new List<TownInformation>()
         {
             new TownInformation("熊本", "43/8610"),
-            new TownInformation("阿蘇乙姫", "43/8630"),
+            new TownInformation("阿蘇乙姫", "43/8620"),
             new TownInformation("牛深", "43/8630"),
             new TownInformation("人吉", "43/8640"),
         };
