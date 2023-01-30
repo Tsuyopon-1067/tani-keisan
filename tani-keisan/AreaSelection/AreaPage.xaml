@@ -67,5 +67,14 @@
                 </Button.Template>
             </Button>
         </Canvas>
+        <TextBlock TextWrapping="Wrap" Text="北海道" Width="36" Height="16" Margin="478,70,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold" IsHitTestVisible="False"/>
+        <TextBlock TextWrapping="Wrap" Text="東北" Width="36" Height="16" Margin="442,209,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold" IsHitTestVisible="False"/>
+        <TextBlock TextWrapping="Wrap" Text="関東" Width="36" Height="16" Margin="442,310,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold" IsHitTestVisible="False"/>
+        <TextBlock TextWrapping="Wrap" Text="中部" Width="36" Height="16" Margin="364,318,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold" IsHitTestVisible="False"/>
+        <TextBlock TextWrapping="Wrap" Text="近畿" Width="36" Height="16" Margin="294,338,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold" IsHitTestVisible="False"/>
+        <TextBlock TextWrapping="Wrap" Text="中国" Width="36" Height="16" Margin="200,325,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold" IsHitTestVisible="False"/>
+        <TextBlock TextWrapping="Wrap" Text="四国" Width="36" Height="16" Margin="212,384,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold" IsHitTestVisible="False"/>
+        <TextBlock TextWrapping="Wrap" Text="九州" Width="36" Height="16" Margin="118,379,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold" IsHitTestVisible="False"/>
+
     </Grid>
 </Page>
