@@ -6,6 +6,8 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Net;
+
 
 
 namespace tani_keisan
@@ -23,6 +25,7 @@ namespace tani_keisan
         public void SetWeather()
         {
             string htmlUrl = Properties.Settings.Default.weatherUrl;
+            htmlUrl = "";
             if (htmlUrl == "")
             {
                 htmlUrl = "13/4410/13104";
@@ -78,17 +81,20 @@ namespace tani_keisan
             var areaLine = doc.GetElementById("cat-pass");
             str = areaLine.TextContent;
             string[] areaList = str.Split('\n');
-            area = areaList[19];
-            area = Regex.Match(area, @"（.*?）").ToString(); // 正規表現使う機会あるやん！ 「西部（浜松）」なら「（浜松）」を取り出す
-            area = area.Substring(1, area.Length - 2); // 「（浜松）」->「浜松」
-int hour = 9; // ToDo時間を取得したい
+            string area = areaList[19];
+            area = area.Replace(" ", ""); // 前側の空白を削除
+                                          //area = Regex.Match(area, @"（.*?）").ToString(); // 正規表現使う機会あるやん！ 「西部（浜松）」なら「（浜松）」を取り出す
+                                          //area = area.Substring(1, area.Length - 2); // 「（浜松）」->「浜松」
+
+            DateTime dt = DateTime.Now;
+            int hour = dt.Hour;
             string weather = weatherList[hour / 3];
             weather = weather.Replace("\n", ""); // [スペースいっぱい]晴れ\n みたいになってるので修正
             weather = weather.Replace(" ", "");
             this.areaName.Text = area;
             this.weatherText.Text = weather;
             this.highTemperature.Text = highTemperature.ToString() + "℃";
-            this.lowTemperature.Text = hlowTemperature.ToString() + "℃";
+            this.lowTemperature.Text = lowTemperature.ToString() + "℃";
 
             switch (weather)
             {
