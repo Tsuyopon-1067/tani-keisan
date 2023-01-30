@@ -8,7 +8,7 @@
         Title="MainWindow" 
         Height="350" Width="400" 
         WindowStyle="None" 
-        AllowsTransparency="True" Background="Black">
+        AllowsTransparency="True" Background="Black" Icon="/ico.png">
     <Grid>
         <!-- 画面全体のGrid ウィンドウハンドルを置く -->
         <Grid>
