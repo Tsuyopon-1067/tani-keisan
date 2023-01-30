@@ -90,19 +90,51 @@ namespace tani_keisan
             weather = weather.Replace("\n", ""); // [スペースいっぱい]晴れ\n みたいになってるので修正
             weather = weather.Replace(" ", "");
             this.areaName.Text = area;
-            this.weatherText.Text = weather;
+            this.weatherText.Text = "";
             this.highTemperature.Text = highTemperature.ToString() + "℃";
             this.lowTemperature.Text = lowTemperature.ToString() + "℃";
 
             switch (weather)
             {
+                case "晴":
+                    weatherImg.Source = new BitmapImage(new Uri("/weatherIco/suny.png", UriKind.Relative));
+                    break;
                 case "晴れ":
                     weatherImg.Source = new BitmapImage(new Uri("/weatherIco/suny.png", UriKind.Relative));
+                    break;
+                case "曇":
+                    weatherImg.Source = new BitmapImage(new Uri("/weatherIco/cloudy.png", UriKind.Relative));
                     break;
                 case "曇り":
                     weatherImg.Source = new BitmapImage(new Uri("/weatherIco/cloudy.png", UriKind.Relative));
                     break;
+                case "雨":
+                    weatherImg.Source = new BitmapImage(new Uri("/weatherIco/rainy.png", UriKind.Relative));
+                    break;
+                case "大雨":
+                    weatherImg.Source = new BitmapImage(new Uri("/weatherIco/hardRainy.png", UriKind.Relative));
+                    break;
                 default:
+                    if (weather.Contains("雪"))
+                    {
+                        weatherImg.Source = new BitmapImage(new Uri("/weatherIco/snowy.png", UriKind.Relative));
+                    }
+                    else if (weather.Contains("晴"))
+                    {
+                        weatherImg.Source = new BitmapImage(new Uri("/weatherIco/suny.png", UriKind.Relative));
+                    }
+                    else if (weather.Contains("曇"))
+                    {
+                        weatherImg.Source = new BitmapImage(new Uri("/weatherIco/cloudy.png", UriKind.Relative));
+                    }
+                    else if (weather.Contains("雨"))
+                    {
+                        weatherImg.Source = new BitmapImage(new Uri("/weatherIco/rainy.png", UriKind.Relative));
+                    }
+                    else
+                    {
+                        weatherImg.Source = new BitmapImage(new Uri("/weatherIco/cloudy.png", UriKind.Relative));
+                    }
                     break;
             }
         }
