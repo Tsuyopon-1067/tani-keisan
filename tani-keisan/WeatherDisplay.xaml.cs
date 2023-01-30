@@ -82,9 +82,7 @@ namespace tani_keisan
             str = areaLine.TextContent;
             string[] areaList = str.Split('\n');
             string area = areaList[19];
-            area = area.Replace(" ", ""); // 前側の空白を削除
-                                          //area = Regex.Match(area, @"（.*?）").ToString(); // 正規表現使う機会あるやん！ 「西部（浜松）」なら「（浜松）」を取り出す
-                                          //area = area.Substring(1, area.Length - 2); // 「（浜松）」->「浜松」
+            area = Regex.Match(area, @"\S*$").ToString(); // 正規表現使う機会あるやん！ 前側の空白を削除
 
             DateTime dt = DateTime.Now;
             int hour = dt.Hour;
