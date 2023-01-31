@@ -356,12 +356,12 @@ namespace tani_keisan.AreaSelection
         {
             new TownInformation("京都", "26/6110"),
             new TownInformation("舞鶴", "26/6220"),
+            new TownInformation("福知山", "26/6120/26201"),
+            new TownInformation("舞鶴市", "26/6120/26202"),
             new TownInformation("宇治市", "26/6110/26204"),
             new TownInformation("亀岡市", "26/6110/26206"),
-            new TownInformation("舞鶴市", "26/6120/26202"),
             new TownInformation("城陽市", "26/6110/26207"),
             new TownInformation("長岡京", "26/6110/26209"),
-            new TownInformation("福知山", "26/6120/26201"),
         };
         public static List<TownInformation> osakaTown { get; } = new List<TownInformation>()
         {
