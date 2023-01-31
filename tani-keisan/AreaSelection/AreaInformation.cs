@@ -259,6 +259,13 @@ namespace tani_keisan.AreaSelection
         {
             new TownInformation("横浜", "14/4610"),
             new TownInformation("小田原", "14/4620"),
+            new TownInformation("川崎区", "14/4610/14131"),
+            new TownInformation("横須賀", "14/4610/14201"),
+            new TownInformation("鎌倉", "14/4610/14204"),
+            new TownInformation("茅ヶ崎", "14/4610/14207"),
+            new TownInformation("相模原", "14/4620/1415"),
+            new TownInformation("海老名", "14/4610/14215"),
+            new TownInformation("平塚", "14/4610/14203"),
         };
         public static List<TownInformation> nigataTown { get; } = new List<TownInformation>()
         {
