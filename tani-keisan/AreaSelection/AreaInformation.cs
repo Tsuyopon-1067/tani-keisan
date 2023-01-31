@@ -216,6 +216,11 @@ namespace tani_keisan.AreaSelection
         {
             new TownInformation("水戸", "8/4010"),
             new TownInformation("土浦", "8/4020"),
+            new TownInformation("笠間", "8/4010/8216"),
+            new TownInformation("茨城", "8/4010/8302"),
+            new TownInformation("日立", "8/4010/8202"),
+            new TownInformation("ひたちなか", "8/4010/8221"),
+            
         };
         public static List<TownInformation> tochigiTown { get; } = new List<TownInformation>()
         {
@@ -244,12 +249,23 @@ namespace tani_keisan.AreaSelection
             new TownInformation("東京", "13/4410"),
             new TownInformation("大島", "13/4420"),
             new TownInformation("八丈島", "13/4430"),
-            new TownInformation("父島", "13/4440")
+            new TownInformation("父島", "13/4440"),
+            new TownInformation("新宿", "13/4410/13104"),
+            new TownInformation("多摩", "13/4410/13224"),
+            new TownInformation("三鷹", "13/4410/13204"),
+            new TownInformation("八王子", "13/4410/13201"),
         };
         public static List<TownInformation> kanagawaTown { get; } = new List<TownInformation>()
         {
             new TownInformation("横浜", "14/4610"),
             new TownInformation("小田原", "14/4620"),
+            new TownInformation("川崎区", "14/4610/14131"),
+            new TownInformation("横須賀", "14/4610/14201"),
+            new TownInformation("鎌倉", "14/4610/14204"),
+            new TownInformation("茅ヶ崎", "14/4610/14207"),
+            new TownInformation("相模原", "14/4620/1415"),
+            new TownInformation("海老名", "14/4610/14215"),
+            new TownInformation("平塚", "14/4610/14203"),
         };
         public static List<TownInformation> nigataTown { get; } = new List<TownInformation>()
         {
