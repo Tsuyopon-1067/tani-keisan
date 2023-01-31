@@ -288,6 +288,11 @@ namespace tani_keisan.AreaSelection
         {
             new TownInformation("岐阜", "21/5210"),
             new TownInformation("高山", "21/5220"),
+            new TownInformation("大垣", "21/5210/21202"),
+            new TownInformation("高山", "21/5220/21203"),
+            new TownInformation("多治見", "21/5210/21204"),
+            new TownInformation("関", "21/5210/21205"),
+            new TownInformation("各務原", "21/5210/21213"),
         };
         public static List<TownInformation> shizuokaTown { get; } = new List<TownInformation>()
         {
@@ -351,20 +356,44 @@ namespace tani_keisan.AreaSelection
         {
             new TownInformation("京都", "26/6110"),
             new TownInformation("舞鶴", "26/6220"),
+            new TownInformation("宇治市", "26/6110/26204"),
+            new TownInformation("亀岡市", "26/6110/26206"),
+            new TownInformation("舞鶴市", "26/6120/26202"),
+            new TownInformation("城陽市", "26/6110/26207"),
+            new TownInformation("長岡京", "26/6110/26209"),
+            new TownInformation("福知山", "26/6120/26201"),
         };
         public static List<TownInformation> osakaTown { get; } = new List<TownInformation>()
         {
             new TownInformation("大阪", "27/6200"),
+            new TownInformation("堺", "27/6200/27141"),
+            new TownInformation("豊中", "27/6200/27203"),
+            new TownInformation("吹田", "27/6200/27205"),
+            new TownInformation("枚方", "27/6200/27210"),
+            new TownInformation("茨木", "27/6200/27211"),
+            new TownInformation("泉佐野", "27/6200/27213"),
+            new TownInformation("寝屋川市", "27/6200/27215"),
+            new TownInformation("東大阪", "27/6200/27227"),
         };
         public static List<TownInformation> hyogoTown { get; } = new List<TownInformation>()
         {
             new TownInformation("神戸", "28/6310"),
             new TownInformation("豊岡", "28/6320"),
+            new TownInformation("姫路", "28/6310/28201"),
+            new TownInformation("尼崎", "28/6310/28202"),
+            new TownInformation("明石", "28/6310/28203"),
+            new TownInformation("芦屋", "28/6310/28206"),
+            new TownInformation("加古川", "28/6310/28210"),
         };
         public static List<TownInformation> naraTown { get; } = new List<TownInformation>()
         {
             new TownInformation("奈良", "29/6410"),
             new TownInformation("風屋", "29/6420"),
+            new TownInformation("天理", "29/6410/29204"),
+            new TownInformation("橿原", "29/6410/29205"),
+            new TownInformation("生駒", "29/6410/29209"),
+            new TownInformation("明日香村", "29/6410/29402"),
+            new TownInformation("河合", "29/6410/29427"),
         };
         public static List<TownInformation> wakayamaTown { get; } = new List<TownInformation>()
         {
