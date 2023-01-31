@@ -8,7 +8,8 @@
     <StackPanel Orientation="Horizontal">
         <TextBlock x:Name="areaName" Text="東京？" LayoutUpdated="TextBlock_LayoutUpdated" />
         <TextBlock x:Name="weatherText" Text="tenki" /> <!-- デバッグ用に残してある 後で消す -->
-        <Image x:Name="weatherImg" Width="16" Height="16" />
+        <Image x:Name="weatherImg" Width="8" Height="8" />
+        <Image x:Name="weatherImg2" Width="8" Height="8" />
         <TextBlock x:Name="highTemperature" Text="40℃" Foreground="#FFFF0000" Margin="4 0" />
         <TextBlock x:Name="lowTemperature" Text="-80℃" Foreground="#FF0000FF" />
     </StackPanel>

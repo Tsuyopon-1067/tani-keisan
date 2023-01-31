@@ -20,6 +20,7 @@ namespace tani_keisan
             InitializeComponent();
             SetWeather();
         }
+        bool flag = false;
         public void SetWeather()
         {
             string htmlUrl = Properties.Settings.Default.weatherUrl;
@@ -58,11 +59,85 @@ namespace tani_keisan
 
             switch (weather)
             {
-                case "晴れ":
-                    weatherImg.Source = new BitmapImage(new Uri("/weatherIco/suny.png", UriKind.Relative));
+                case "晴れ" or "晴":
+                    flag = false;
+                    weatherImg.Source = new BitmapImage(new Uri("/weatherIco/sunny.png", UriKind.Relative));
                     break;
-                case "曇り":
+                case "曇り" or "曇":
+                    flag = false;
                     weatherImg.Source = new BitmapImage(new Uri("/weatherIco/cloudy.png", UriKind.Relative));
+                    break;
+                case "雨":
+                    flag = false;
+                    weatherImg.Source = new BitmapImage(new Uri("/weatherIco/rainy.png", UriKind.Relative));
+                    break;
+                case "大雨" or "暴風雨":
+                    flag = false;
+                    weatherImg.Source = new BitmapImage(new Uri("/weatherIco/hardRainy.png", UriKind.Relative));
+                    break;
+                case "雪" or "大雪" or "暴風雨":
+                    flag = false;
+                    weatherImg.Source = new BitmapImage(new Uri("/weatherIco/snowy.png", UriKind.Relative));
+                    break;
+                case "晴のち曇" or "晴時々曇" or "晴一時曇":
+                    flag = true;
+                    weatherImg.Source = new BitmapImage(new Uri("/weatherIco/sunny.png", UriKind.Relative));
+                    weatherImg2.Source = new BitmapImage(new Uri("/weatherIco/cloudy.png", UriKind.Relative));
+                    break;
+                case "曇のち晴" or "曇時々晴" or "曇一時晴":
+                    flag = true;
+                    weatherImg.Source = new BitmapImage(new Uri("/weatherIco/cloudy.png", UriKind.Relative));
+                    weatherImg2.Source = new BitmapImage(new Uri("/weatherIco/sunny.png", UriKind.Relative));
+                    break;
+                case "晴れのち雨" or "晴時々雨" or "晴一時雨":
+                    flag = true;
+                    weatherImg.Source = new BitmapImage(new Uri("/weatherIco/sunny.png", UriKind.Relative));
+                    weatherImg2.Source = new BitmapImage(new Uri("/weatherIco/rainy.png", UriKind.Relative));
+                    break;
+                case "雨のち晴" or "雨時々晴" or "雨一時晴":
+                    flag = true;
+                    weatherImg.Source = new BitmapImage(new Uri("/weatherIco/rainy.png", UriKind.Relative));
+                    weatherImg2.Source = new BitmapImage(new Uri("/weatherIco/sunny.png", UriKind.Relative));
+                    break;
+                case "晴のち雪" or "晴時々雪" or "晴一時雪":
+                    flag = true;
+                    weatherImg.Source = new BitmapImage(new Uri("/weatherIco/sunny.png", UriKind.Relative));
+                    weatherImg2.Source = new BitmapImage(new Uri("/weatherIco/snowy.png", UriKind.Relative));
+                    break;
+                case "雪のち晴" or "雪時々晴" or "雪一時晴":
+                    flag = true;
+                    weatherImg.Source = new BitmapImage(new Uri("/weatherIco/snowy.png", UriKind.Relative));
+                    weatherImg2.Source = new BitmapImage(new Uri("/weatherIco/sunny.png", UriKind.Relative));
+                    break;
+                case "曇のち雨" or "曇時々雨" or "曇一時雨":
+                    flag = true;
+                    weatherImg.Source = new BitmapImage(new Uri("/weatherIco/cloudy.png", UriKind.Relative));
+                    weatherImg2.Source = new BitmapImage(new Uri("/weatherIco/rainy.png", UriKind.Relative));
+                    break;
+                case "雨のち曇" or "雨時々曇" or "雨一時曇":
+                    flag = true;
+                    weatherImg.Source = new BitmapImage(new Uri("/weatherIco/rainy.png", UriKind.Relative));
+                    weatherImg2.Source = new BitmapImage(new Uri("/weatherIco/cloudy.png", UriKind.Relative));
+                    break;
+                case "曇のち雪" or "曇時々雪" or "曇一時雪":
+                    flag = true;
+                    weatherImg.Source = new BitmapImage(new Uri("/weatherIco/cloudy.png", UriKind.Relative));
+                    weatherImg2.Source = new BitmapImage(new Uri("/weatherIco/snowy.png", UriKind.Relative));
+                    break;
+                case "雪のち曇" or "雪時々曇" or "雪一時曇":
+                    flag = true;
+                    weatherImg.Source = new BitmapImage(new Uri("/weatherIco/snowy.png", UriKind.Relative));
+                    weatherImg2.Source = new BitmapImage(new Uri("/weatherIco/cloudy.png", UriKind.Relative));
+                    break;
+                case "雨のち雪" or "雨時々雪" or "雨一時雪":
+                    flag = true;
+                    weatherImg.Source = new BitmapImage(new Uri("/weatherIco/rainy.png", UriKind.Relative));
+                    weatherImg2.Source = new BitmapImage(new Uri("/weatherIco/snowy.png", UriKind.Relative));
+                    break;
+                case "雪のち雨" or "雪時々雨" or "雪一時雨":
+                    flag = true;
+                    weatherImg.Source = new BitmapImage(new Uri("/weatherIco/snowy.png", UriKind.Relative));
+                    weatherImg2.Source = new BitmapImage(new Uri("/weatherIco/rainy.png", UriKind.Relative));
                     break;
                 default:
                     break;
@@ -71,7 +146,17 @@ namespace tani_keisan
 
         private void TextBlock_LayoutUpdated(object sender, EventArgs e)
         {
-            weatherImg.Height = areaName.Height;
+            if (flag) // todo: 二つ天気を表示する場合50%サイズで二つ並べたい
+            {
+                weatherImg.Height = areaName.Height / 2;
+                weatherImg.Width = areaName.Height / 2;
+                weatherImg2.Height = areaName.Height / 2;
+                weatherImg2.Width = areaName.Height / 2;
+            } else
+            {
+                weatherImg.Height = areaName.Height;
+                weatherImg.Width = areaName.Height;
+            }
         }
     }
 }

@@ -161,21 +161,21 @@ namespace tani_keisan.AreaSelection
         public static List<TownInformation> hokkaidoTown { get; } = new List<TownInformation>()
         {
             new TownInformation("稚内", "1a/1100"),
-            new TownInformation("旭川", "1a/1200"),
-            new TownInformation("留萌", "1a/1300"),
-            new TownInformation("札幌", "1b/1400"),
-            new TownInformation("岩見沢", "1b/1500"),
-            new TownInformation("倶知安", "1b/1600"),
-            new TownInformation("網走", "1c/1710"),
-            new TownInformation("北見", "1c/1720"),
+            new TownInformation("旭川", "1a/1200"), //ok
+            new TownInformation("留萌", "1a/1300"), //ok
+            new TownInformation("札幌", "1b/1400"), //ok
+            new TownInformation("岩見沢", "1b/1500"), //ok
+            new TownInformation("倶知安", "1b/1600"), //ok
+            new TownInformation("網走", "1c/1710"), //ok
+            new TownInformation("北見", "1c/1720"), //ok
             new TownInformation("紋別", "1c/1730"),
-            new TownInformation("根室", "1c/1800"),
-            new TownInformation("釧路", "1c/1900"),
-            new TownInformation("帯広", "1c/2000"),
-            new TownInformation("室蘭", "1d/2100"),
-            new TownInformation("浦河", "1d/2200"),
-            new TownInformation("函館", "1d/2300"),
-            new TownInformation("江差", "1d/2400"),
+            new TownInformation("根室", "1c/1800"), //ok
+            new TownInformation("釧路", "1c/1900"), //ok
+            new TownInformation("帯広", "1c/2000"), //ok
+            new TownInformation("室蘭", "1d/2100"), //ok
+            new TownInformation("浦河", "1d/2200"), //ok
+            new TownInformation("函館", "1d/2300"), //ok
+            new TownInformation("江差", "1d/2400"), //ok
         };
         public static List<TownInformation> aomoriTown { get; } = new List<TownInformation>()
         {

@@ -12,7 +12,7 @@
   <ItemGroup>
     <None Remove="ico.png" />
     <None Remove="weatherIco\cloudy.png" />
-    <None Remove="weatherIco\suny.png" />
+    <None Remove="weatherIco\sunny.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -31,7 +31,7 @@
   <ItemGroup>
     <Resource Include="ico.png" />
     <Resource Include="weatherIco\cloudy.png" />
-    <Resource Include="weatherIco\suny.png" />
+    <Resource Include="weatherIco\sunny.png" />
   </ItemGroup>
 
   <ItemGroup>
