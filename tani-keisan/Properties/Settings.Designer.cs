@@ -25,7 +25,7 @@ namespace tani_keisan.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("22/5040")]
         public string weatherUrl {
             get {
                 return ((string)(this["weatherUrl"]));

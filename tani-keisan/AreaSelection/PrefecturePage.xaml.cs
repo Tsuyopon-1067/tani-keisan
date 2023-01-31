@@ -41,7 +41,7 @@ namespace tani_keisan.AreaSelection
             foreach (var item in lst)
             {
                 int r = count % ROW;
-                int c = count / (ROW + 1);
+                int c = count / ROW;
                 Button btn = new();
                 btn.Content = string.Format(item.ToString());
                 Grid.SetRow(btn, r);

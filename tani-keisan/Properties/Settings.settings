@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="weatherUrl" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">22/5040</Value>
     </Setting>
   </Settings>
 </SettingsFile>
